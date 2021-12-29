@@ -15,7 +15,7 @@ print(combs(100))
 
 def recombs(n, a, choices):
     c = []
-    if n == 0 and len(a) == 0:
+    if n == 0:
         return [choices]
     if len(a) == 0 and n != 0:
         return c
