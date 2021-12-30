@@ -1,9 +1,21 @@
+import sys
+
+
 def columnFirstSearch(r):
     cols = {}
     t = [(r, 0)]
     cols.update({0: [r]})
+
+    minCol = sys.maxsize
+    maxCol = -sys.maxsize - 1
+
     while len(t) != 0:
         (node, col) = t.pop(0)
+
+        if minCol > col:
+            minCol = col
+        if maxCol < col:
+            maxCol = col
 
         if node.left is not None:
             leftCol = col - 1
@@ -21,10 +33,9 @@ def columnFirstSearch(r):
 
             t.append((node.right, rightCol))
 
-    sortedKeys = sorted(cols.keys())
     path = []
 
-    for i in sortedKeys:
+    for i in range(minCol, maxCol + 1):
         path.extend(cols.get(i))
 
     return path
