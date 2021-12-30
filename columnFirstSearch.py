@@ -13,7 +13,7 @@ def columnFirstSearch(r):
         (node, col) = t.pop(0)
         vals = get(col, cols, node)
         cols.update({col: vals})
-        
+
         if minCol > col:
             minCol = col
         if maxCol < col:
