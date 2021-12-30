@@ -11,7 +11,9 @@ def columnFirstSearch(r):
 
     while len(t) != 0:
         (node, col) = t.pop(0)
-
+        vals = get(col, cols, node)
+        cols.update({col: vals})
+        
         if minCol > col:
             minCol = col
         if maxCol < col:
@@ -19,18 +21,10 @@ def columnFirstSearch(r):
 
         if node.left is not None:
             leftCol = col - 1
-
-            vals = get(leftCol, cols, node.left)
-            cols.update({leftCol: vals})
-
             t.append((node.left, leftCol))
 
         if node.right is not None:
             rightCol = col + 1
-
-            vals = get(rightCol, cols, node.right)
-            cols.update({rightCol: vals})
-
             t.append((node.right, rightCol))
 
     path = []
