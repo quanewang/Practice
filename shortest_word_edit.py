@@ -4,7 +4,7 @@ def shortest_word_edit(source, target, words):
         return -1
 
     diff = [(source, 0)]
-    used = []
+    used = [source]
     while diff:
         (source, count) = diff.pop(0)
         if source == target:
