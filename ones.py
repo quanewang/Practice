@@ -9,8 +9,6 @@ def count_ones(n, unit_place=0, running_sum=0):
         count += 1 * pow(10, unit_place)
 
     if digit == 1:
-        places = unit_place - 1
-
         count += running_sum + 1
 
     running_sum += digit * pow(10, unit_place)
