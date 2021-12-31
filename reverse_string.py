@@ -19,13 +19,13 @@ def reverse_string(str):
 def reverse_helper(str, beg, end):
     left = beg
     right = end
-    while left < right :
+    while left < right:
         temp = str[left]
-        str[left] = str[right ]
-        str[right ] = temp
+        str[left] = str[right]
+        str[right] = temp
         left += 1
         right -= 1
 
 
 
-print(reverse_string(['g', 'o', ' ', 'w', 'i', 't', 'h', 'o', 'u', 't', ' ', 'w', 'i', 'n', 'd']))
+print(reverse_string(['g', 'o', 'w', 'i', 't', 'h', 'o', 'u', 't', 'w', 'i', 'n', 'd']))
