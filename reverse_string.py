@@ -18,11 +18,15 @@ def reverse_string(str):
 
 
 def reverse_helper(str, beg, end):
-    for j in range(beg, (end + beg) // 2 + 1):
-        opposite = (end - j) + beg
-        temp = str[j]
-        str[j] = str[opposite]
-        str[opposite] = temp
+    left = beg
+    right = end
+    while left < right :
+        temp = str[left]
+        str[left] = str[right ]
+        str[right ] = temp
+        left += 1
+        right -= 1
+
 
 
 print(reverse_string(['g', 'o', ' ', 'w', 'i', 't', 'h', 'o', 'u', 't', ' ', 'w', 'i', 'n', 'd']))
