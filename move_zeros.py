@@ -1,4 +1,4 @@
-def count_zeros(list):
+def move_zeros(list):
     i = 0
     count = 0
     while i in range(len(list)):
@@ -14,4 +14,4 @@ def count_zeros(list):
     return list
 
 
-print(count_zeros([1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0]))
+print(move_zeros([1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0]))
