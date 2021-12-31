@@ -20,5 +20,5 @@ We should implement a solution that is more efficient than a naive brute force.
 Examples:
 ```
 input:  arr = [1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0]
-output: [1, 10, 2, 8, 3, 6, 4, 5, 7, 0, 0, 0, 0, 0]
+     output:  [1, 10, 2, 8, 3, 6, 4, 5, 7, 0, 0, 0, 0, 0]
 ```
