@@ -2,6 +2,7 @@ def array_of_array_products(arr):
     left_products = []
     right_products = []
     array_products = []
+
     for i in range(len(arr)):
         if i == 0:
             left_products.append(1)
