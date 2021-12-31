@@ -20,12 +20,5 @@ def array_of_array_products(arr):
     return array_products
 
 
-def get_product(arr, beg, end):
-    product = 1
-    for i in range(beg, end):
-        product *= arr[i]
-    return product
-
-
 print(array_of_array_products([2, 7, 3, 4]))
 print(array_of_array_products([8, 10, 2]))
