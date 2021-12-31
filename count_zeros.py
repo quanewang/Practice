@@ -1,7 +1,4 @@
 def count_zeros(list):
-    done = get_zeros(list)
-    pointer = 0
-    count = 0
     i = 0
     while i in range(len(list)):
         j = i
@@ -10,14 +7,6 @@ def count_zeros(list):
 
         i = shuffle(list, i, j)
     return list
-
-
-def get_zeros(list):
-    count = 0
-    for i in range(len(list)):
-        if list[i] == 0:
-            count += 1
-    return count
 
 def shuffle(list, i, j):
     if j == i or j >= len(list):
