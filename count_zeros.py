@@ -8,10 +8,10 @@ def count_zeros(list):
         else:
             list[i - count] = list[i]
         i += 1
+
     for j in range(len(list) - count, len(list)):
         list[j] = 0
 
     return list
-
 
 print(count_zeros([1, 10, 0, 2, 8, 3, 0, 0, 6, 4, 0, 5, 7, 0]))
