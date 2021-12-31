@@ -195,3 +195,47 @@ else:
     print ("\nInorder Successor doesn't exist")
 
 ```
+### Pairs with Specific Difference
+Given an array arr of distinct integers and a nonnegative integer k, write a function findPairsWithGivenDifference that returns an array of all pairs [x,y] in arr, such that x - y = k. If no such pairs exist, return an empty array.
+
+Note: the order of the pairs in the output array should maintain the order of the y element in the original array.
+
+Examples:
+```
+input:  arr = [0, -1, -2, 2, 1], k = 1
+output: [[1, 0], [0, -1], [-1, -2], [2, 1]]
+
+input:  arr = [1, 7, 5, 3, 32, 17, 12], k = 17
+output: []
+```
+
+template
+```
+def find_pairs_with_given_difference(arr, k):
+  pass
+```
+
+### Array Quadruplet
+Given an unsorted array of integers arr and a number s, write a function findArrayQuadruplet that finds four numbers (quadruplet) in arr that sum up to s. Your function should return an array of these numbers in an ascending order. If such a quadruplet doesn’t exist, return an empty array.
+
+Note that there may be more than one quadruplet in arr whose sum is s. You’re asked to return the first one you encounter (considering the results are sorted).
+
+Explain and code the most efficient solution possible, and analyze its time and space complexities.
+
+Example:
+```
+input:  arr = [2, 7, 4, 0, 9, 5, 1, 3], s = 20
+
+output: [0, 4, 7, 9] # The ordered quadruplet of (7, 4, 0, 9)
+                     # whose sum is 20. Notice that there
+                     # are two other quadruplets whose sum is 20:
+                     # (7, 9, 1, 3) and (2, 4, 9, 5), but again you’re
+                     # asked to return the just one quadruplet (in an
+                     # ascending order)
+```
+
+template
+```
+def find_array_quadruplet(arr, s):
+  pass
+```
