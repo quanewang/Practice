@@ -4,15 +4,14 @@ def reverse_string(str):
     reverse_helper(str, 0, n)
 
     beg = 0
-    for i in range(len(str)):
-        if str[i] == ' ':
-            end = i - 1
+    end = 0
+    while end < len(str):
+        if str[end] == ' ':
+            reverse_helper(str, beg, end - 1)
+            beg = end + 1
+        elif end == len(str) - 1:
             reverse_helper(str, beg, end)
-            beg = i + 1
-
-        elif i == len(str) - 1:
-            end = i
-            reverse_helper(str, beg, end)
+        end += 1
 
     return str
 
