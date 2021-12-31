@@ -239,3 +239,103 @@ template
 def find_array_quadruplet(arr, s):
   pass
 ```
+### K-Messed Array Sort
+Given an array of integers arr where each element is at most k places away from its sorted position, code an efficient function sortKMessedArray that sorts arr. For instance, for an input array of size 10 and k = 2, an element belonging to index 6 in the sorted array will be located at either index 4, 5, 6, 7 or 8 in the input array.
+
+Analyze the time and space complexities of your solution.
+
+Example:
+```
+input:  arr = [1, 4, 5, 2, 3, 7, 8, 6, 10, 9], k = 2
+
+output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+```
+def sort_k_messed_array(arr, k):
+    pass
+```
+
+### Busiest Time in The Mall
+The Westfield Mall management is trying to figure out what the busiest moment at the mall was last year. You’re given data extracted from the mall’s door detectors. Each data point is represented as an integer array whose size is 3. The values at indices 0, 1 and 2 are the timestamp, the count of visitors, and whether the visitors entered or exited the mall (0 for exit and 1 for entrance), respectively. Here’s an example of a data point: [ 1440084737, 4, 0 ].
+
+Note that time is given in a Unix format called Epoch, which is a nonnegative integer holding the number of seconds that have elapsed since 00:00:00 UTC, Thursday, 1 January 1970.
+
+Given an array, data, of data points, write a function findBusiestPeriod that returns the time at which the mall reached its busiest moment last year. The return value is the timestamp, e.g. 1480640292. Note that if there is more than one period with the same visitor peak, return the earliest one.
+
+Assume that the array data is sorted in an ascending order by the timestamp. Explain your solution and analyze its time and space complexities.
+
+Example:
+```
+input:  data = [ [1487799425, 14, 1], 
+                 [1487799425, 4,  0],
+                 [1487799425, 2,  0],
+                 [1487800378, 10, 1],
+                 [1487801478, 18, 0],
+                 [1487801478, 18, 1],
+                 [1487901013, 1,  0],
+                 [1487901211, 7,  1],
+                 [1487901211, 7,  0] ]
+
+output: 1487800378 # since the increase in the number of people
+                   # in the mall is the highest at that point
+```
+
+```
+def find_busiest_period(data):
+    pass
+```
+
+### Shifted Array Search
+A sorted array of distinct integers shiftArr is shifted to the left by an unknown offset and you don’t have a pre-shifted copy of it. For instance, the sequence 1, 2, 3, 4, 5 becomes 3, 4, 5, 1, 2, after shifting it twice to the left.
+
+Given shiftArr and an integer num, implement a function shiftedArrSearch that finds and returns the index of num in shiftArr. If num isn’t in shiftArr, return -1. Assume that the offset can be any value between 0 and arr.length - 1.
+
+Explain your solution and analyze its time and space complexities.
+
+Example:
+
+```
+input:  shiftArr = [9, 12, 17, 2, 4, 5], num = 2 # shiftArr is the
+                                                 # outcome of shifting
+                                                 # [2, 4, 5, 9, 12, 17]
+                                                 # three times to the left
+
+output: 3 # since it’s the index of 2 in arr
+```
+```
+def shifted_arr_search(shiftArr, num):
+    pass
+```
+### Array Index & Element Equality
+Given a sorted array arr of distinct integers, write a function indexEqualsValueSearch that returns the lowest index i for which arr[i] == i. Return -1 if there is no such index. Analyze the time and space complexities of your solution and explain its correctness.
+
+Examples:
+```
+input: arr = [-8,0,2,5]
+output: 2 # since arr[2] == 2
+
+input: arr = [-1,0,3,6]
+output: -1 # since no index in arr satisfies arr[i] == i.
+```
+```
+def index_equals_value_search(arr):
+    pass
+```
+### Matrix Spiral Copy
+Given a 2D array (matrix) inputMatrix of integers, create a function spiralCopy that copies inputMatrix’s values into a 1D array in a spiral order, clockwise. Your function then should return that array. Analyze the time and space complexities of your solution.
+
+Example:
+```
+input:  inputMatrix  = [ [1,    2,   3,  4,    5],
+                         [6,    7,   8,  9,   10],
+                         [11,  12,  13,  14,  15],
+                         [16,  17,  18,  19,  20] ]
+
+output: [1, 2, 3, 4, 5, 10, 15, 20, 19, 18, 17, 16, 11, 6, 7, 8, 9, 14, 13, 12]
+```
+
+```
+def spiral_copy(inputMatrix):
+  pass # your code goes here
+```
