@@ -28,3 +28,4 @@ def get_product(arr, beg, end):
 
 
 print(array_of_array_products([2, 7, 3, 4]))
+print(array_of_array_products([8, 10, 2]))
