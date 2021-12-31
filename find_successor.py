@@ -33,7 +33,6 @@ class BinarySearchTree:
                 node_list.append(node.left)
         return minNode
 
-
     # Given a binary search tree and a number, inserts a
     # new node with the given number in the correct place
     # in the tree. Returns the new root pointer which the
@@ -55,7 +54,7 @@ class BinarySearchTree:
 
             if (key < currentNode.key):
                 if (currentNode.left is None):
-                    currentNode.left = newNode;
+                    currentNode.left = newNode
                     newNode.parent = currentNode;
                     break
                 else:
