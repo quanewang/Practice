@@ -339,3 +339,6 @@ output: [1, 2, 3, 4, 5, 10, 15, 20, 19, 18, 17, 16, 11, 6, 7, 8, 9, 14, 13, 12]
 def spiral_copy(inputMatrix):
   pass # your code goes here
 ```
+### Rearrange Array
+
+Given an array {a0, a1, a2, ... an, b0, b1, b2 ... bn}, Rearrange this array into {a0, b0, a1, b1, a2, b2, ... an, bn} inplace, O (1) space
