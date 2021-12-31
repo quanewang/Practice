@@ -1,9 +1,13 @@
 def array_of_array_products(arr):
+    left_products = []
+    right_products = []
     array_products = []
     for i in range(len(arr)):
-        left_product = get_product(arr, 0, i)
-        right_product = get_product(arr, i + 1, len(arr))
-        array_products.append(left_product * right_product)
+        left_products.append(get_product(arr, 0, i))
+
+    for i in range(len(arr)):
+        right_products.append(get_product(arr, i + 1, len(arr)))
+        array_products.append(left_products[i] * right_products[i])
 
     return array_products
 
