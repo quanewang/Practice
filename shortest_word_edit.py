@@ -30,3 +30,4 @@ def compute_diff(source, count, words, used):
 
 
 print(shortest_word_edit("bit", "dog", ["but", "put", "big", "pot", "pog", "dog", "lot"]))
+print(shortest_word_edit("no", "go", ["to"]))
