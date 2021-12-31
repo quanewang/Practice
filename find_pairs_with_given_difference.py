@@ -3,7 +3,7 @@ def find_pairs_with_given_difference(arr, k):
     for x in range(len(arr)):
         for y in range(len(arr)):
             if arr[x] - arr[y] == k:
-                pairs.append([arr[x], arr[y]])
+                pairs.insert(y, [arr[x], arr[y]])
     return pairs
 
 
