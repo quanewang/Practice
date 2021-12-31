@@ -1,3 +1,4 @@
+# breadth-first search problem
 def shortest_word_edit(source, target, words):
     if target not in words or len(source) != len(target):
         return -1
