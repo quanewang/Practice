@@ -3,8 +3,8 @@ def array_quadruplet(arr, s):
         return []
 
     arr = sorted(arr)
-    for i in range(len(arr)):
-        for j in range(i + 1, len(arr)):
+    for i in range(len(arr) - 3):  # optimization accounting for # of pointers
+        for j in range(i + 1, len(arr) - 2):
             x = j + 1
             y = len(arr) - 1
             remainder = s - arr[i] - arr[j]
