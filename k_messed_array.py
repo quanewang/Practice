@@ -6,12 +6,10 @@ def k_messed_array(arr, k):
     result = []
 
     for i in range(len(arr)):
-        if len(q) < k + 1:
-            heapq.heappush(q, arr[i])
-
-        elif len(q) == k + 1:
+        if len(q) == k + 1:
             result.append(heapq.heappop(q))
-            heapq.heappush(q, arr[i])
+
+        heapq.heappush(q, arr[i])
 
     while q:
         result.append(heapq.heappop(q))
