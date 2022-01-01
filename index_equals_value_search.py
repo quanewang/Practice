@@ -1,8 +1,8 @@
 def index_equals_value_search(arr):
-    return search(arr, 0, len(arr) - 1, -1)
+    return search(arr, 0, len(arr) - 1)
 
 
-def search(arr, beg, end, lowest_index):
+def search(arr, beg, end, lowest_index=-1):
     mid = (beg + end) // 2
     if mid == arr[mid]:
         if lowest_index == -1:
