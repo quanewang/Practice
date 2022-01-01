@@ -1,7 +1,6 @@
 def array_quadruplet(arr, s):
-    quad = []
     if len(arr) < 4:
-        return quad
+        return []
 
     arr = sorted(arr)
     for i in range(len(arr)):
@@ -17,7 +16,7 @@ def array_quadruplet(arr, s):
                 elif x + y == remainder:
                     return [i, j, x, y]
 
-    return quad
+    return []
 
 
 print(array_quadruplet([2, 7, 4, 0, 9, 5, 1, 3], 20))
