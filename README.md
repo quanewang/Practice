@@ -555,6 +555,8 @@ It can be constructed by starting with a line segment of arbitrary length, drawi
 
 Here are some examples of H-trees at different levels of depth:
 
+https://github.com/quanewang/public/blob/master/H.png
+
 Write a function drawHTree that constructs an H-tree, given its center (x and y coordinates), a starting length, and depth. Assume that the starting line is parallel to the X-axis.
 
 Use the function drawLine provided to implement your algorithm. In a production code, a drawLine function would render a real line between two points. However, this is not a real production environment, so to make things easier, implement drawLine such that it simply prints its arguments (the print format is left to your discretion).
