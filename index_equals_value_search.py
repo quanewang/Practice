@@ -13,8 +13,6 @@ def search(arr, beg, end, lowest_index=-1):
         return lowest_index
     if mid > arr[mid]:
         return search(arr, mid + 1, end, lowest_index)
-    if mid < arr[mid]:
-        return search(arr, beg, mid - 1, lowest_index)
     else:
         return search(arr, beg, mid - 1, lowest_index)
 
