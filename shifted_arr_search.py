@@ -18,7 +18,7 @@ def search(arr, beg, end, num):
     if arr[mid] < num:
         return search(arr, mid + 1, end, num)
     else:
-        return search(arr, beg, mid, num)
+        return search(arr, beg, mid - 1, num)
 
 
 def find_shift(arr, beg, end):
@@ -31,6 +31,7 @@ def find_shift(arr, beg, end):
         return find_shift(arr, beg, mid)
 
 
-print(shifted_arr_search([9, 12, 17, 2, 4, 5], 2))
-print(shifted_arr_search([2, 1], 2))
-print(shifted_arr_search([5, 2, 3], 2))
+print(shifted_arr_search([9, 12, 17, 2, 4, 5], 5))
+print(shifted_arr_search([2, 1], 1))
+print(shifted_arr_search([5, 2, 3], 5))
+print(shifted_arr_search([5, 2, 3, 4], 5))
