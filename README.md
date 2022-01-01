@@ -577,4 +577,6 @@ In every 3x3 sub-board that is illustrated below, all characters ‘1’,‘2’
 ```
 A solved sudoku is a board with no blank spaces, i.e. all blank spaces are filled with characters that abide to the constraints above. If the function succeeds in solving the sudoku board, it’ll return true (false, otherwise).
 
+https://github.com/quanewang/public/blob/master/soduku.png
+
 Example (more examples can be found here): https://sudokukingdom.com/
