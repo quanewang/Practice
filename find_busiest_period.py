@@ -1,5 +1,5 @@
 def find_busiest_period(data):
-    busiest = 0
+    busiest = data[0][0]
     i = 0
     current = data[0][0]
     counter = 0
@@ -13,6 +13,10 @@ def find_busiest_period(data):
                 busiest = current
             current = data[i][0]
             counter = update_counter(data[i], counter)
+
+    if maxPointer < counter:
+        busiest = current
+    
     return busiest
 
 
@@ -27,9 +31,4 @@ def update_counter(data, counter):
 print(find_busiest_period([[1487799425, 14, 1],
                            [1487799425, 4, 0],
                            [1487799425, 2, 0],
-                           [1487800378, 10, 1],
-                           [1487801478, 18, 0],
-                           [1487801478, 18, 1],
-                           [1487901013, 1, 0],
-                           [1487901211, 7, 1],
-                           [1487901211, 7, 0]]))
+                           [1487800378, 10, 1]]))
