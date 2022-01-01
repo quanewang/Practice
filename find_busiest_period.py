@@ -16,7 +16,7 @@ def find_busiest_period(data):
 
     if maxPointer < counter:
         busiest = current
-    
+
     return busiest
 
 
