@@ -537,11 +537,20 @@ Example:
 ```
 input:  arr = [1, 5, 4, 3, 2]
 
-output: [1, 2, 3, 4, 5] # to clarify, this is pancakeSort's output
+output: [1, 2, 3, 4, 5] 
 ```
 Analyze the time and space complexities of your solution.
 
 Note: it’s called pancake sort because it resembles sorting pancakes on a plate with a spatula, where you can only use the spatula to flip some of the top pancakes in the plate. 
+
+5 1 4 3 2
+2 3 4 1 5
+4 3 2 1 5
+1 2 3 4 5
+3 2 1 4 5
+1 2 3 4 5
+2 1 3 4 5
+1 2 3 4 5
 
 ```
 def pancake_sort(arr):
