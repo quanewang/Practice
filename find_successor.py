@@ -17,21 +17,16 @@ class BinarySearchTree:
 
     def find_in_order_successor(self, inputNode):
         if inputNode.right is None:
-            return None
-        node_list = [inputNode.right]
-        minNode = inputNode.right
-        while node_list:
-            node = node_list.pop(0)
+            node = inputNode
+            parent = node.parent
+            while parent is not None and node.key > parent.key:
+                parent = parent.parent
+            return parent
 
-            if minNode.key > node.key:
-                minNode = node
-
-            if node.right is not None:
-                node_list.append(node.right)
-
-            if node.left is not None:
-                node_list.append(node.left)
-        return minNode
+        node = inputNode.right
+        while node.left is not None:
+            node = node.left
+        return node
 
     # Given a binary search tree and a number, inserts a
     # new node with the given number in the correct place
@@ -103,6 +98,8 @@ bst.insert(14);
 test = bst.getNodeByKey(9)
 
 # Find the in order successor of test
+succ = bst.find_in_order_successor(test)
+test = bst.getNodeByKey(14)
 succ = bst.find_in_order_successor(test)
 
 # Print the key of the successor node
