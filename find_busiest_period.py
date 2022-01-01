@@ -4,7 +4,7 @@ def find_busiest_period(data):
     current = data[0][0]
     counter = 0
     maxPointer = 0
-    while i < len(data):
+    for i in range(len(data)):
         if data[i][0] == current:
             counter = update_counter(data[i], counter)
         else:
@@ -13,7 +13,6 @@ def find_busiest_period(data):
                 busiest = current
             current = data[i][0]
             counter = update_counter(data[i], counter)
-        i += 1
     return busiest
 
 
