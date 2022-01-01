@@ -1,8 +1,8 @@
 def shifted_arr_search(arr, num):
     shift_index = find_shift(arr, 0, len(arr) - 1)
-
+    print("shift: " + str(shift_index))
     num_index = search(arr, 0, shift_index - 1, num)
-    
+
     if num_index == -1:
         num_index = search(arr, shift_index, len(arr) - 1, num)
 
@@ -18,7 +18,7 @@ def search(arr, beg, end, num):
     if arr[mid] < num:
         return search(arr, mid + 1, end, num)
     else:
-        return search(arr, beg, mid - 1, num)
+        return search(arr, beg, mid, num)
 
 
 def find_shift(arr, beg, end):
@@ -28,7 +28,9 @@ def find_shift(arr, beg, end):
     if arr[mid] > arr[end]:
         return find_shift(arr, mid + 1, end)
     else:
-        return find_shift(arr, beg, mid - 1)
+        return find_shift(arr, beg, mid)
 
 
 print(shifted_arr_search([9, 12, 17, 2, 4, 5], 2))
+print(shifted_arr_search([2, 1], 2))
+print(shifted_arr_search([5, 2, 3], 2))
