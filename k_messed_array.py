@@ -1,5 +1,6 @@
 import heapq
 
+
 def k_messed_array(arr, k):
     q = []
     result = []
@@ -14,6 +15,7 @@ def k_messed_array(arr, k):
 
     while q:
         result.append(heapq.heappop(q))
+
     return result
 
 
