@@ -13,7 +13,7 @@ def array_quadruplet(arr, s):
                     y -= 1
                 elif x + y < remainder:
                     x += 1
-                elif x + y == remainder:
+                else:
                     return [i, j, x, y]
 
     return []
