@@ -3,9 +3,6 @@ def shifted_arr_search(arr, num):
     if not shift_index == len(arr) - 1:
         if arr[shift_index] > arr[shift_index + 1]:
             shift_index += 1
-    elif not shift_index == 0:
-        if not arr[shift_index] < arr[shift_index - 1]:
-            shift_index -= 1
 
     print("shift: " + str(shift_index))
     num_index = search(arr, 0, shift_index - 1, num)
