@@ -692,21 +692,7 @@ class BinarySearchTree:
       self.root = None
 
   def find_largest_smaller_key(self, num):
-    node = self.root
-    if not node:
-      return -1
-    if num<=node.key:
-      if node.left:
-        return self.find_largest_smaller_key(node.left, num)
-      return -1
-    elif num>node.key:
-      if node.right:
-        result = self.find_largest_smaller_key(node.right, num)
-        if result==-1:
-          return node.key
-        else:
-          return result
-      return node.key
+    pass
 
   # Given a binary search tree and a number, inserts a
   # new node with the given number in the correct place
