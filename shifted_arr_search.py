@@ -1,5 +1,4 @@
 def shifted_arr_search(arr, num):
-    shift_index = -1
     mid_index = (len(arr) - 1) // 2
     shift_index = find_shift(arr, 0, len(arr) - 1, mid_index)
 
