@@ -46,7 +46,7 @@ def swap_rearrange(arr, pair_size=1):
 def swap_helper(arr, end, pair_size=1):
     if end // pair_size == 2 or pair_size >= end:
         return arr
-    end = shuffle_helper(arr, 0, end, pair_size)
+    end = shuffle_helper(arr, end, pair_size)
     middle = end // 2 - pair_size // 2
     b = middle
     swap_ind = 1 + pair_size // 2
@@ -64,8 +64,8 @@ def swap_helper(arr, end, pair_size=1):
     return arr
 
 
-def shuffle_helper(arr, beg, end, pair_size,):
-    middle = (beg + end) // 2
+def shuffle_helper(arr, end, pair_size,):
+    middle = end // 2
     pairs = middle // pair_size
     if pairs % 2:
         shuffle_ind = middle - pair_size
