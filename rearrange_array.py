@@ -13,9 +13,8 @@ def rearrange_array(arr):
 
 
 def extra_space_rearrange(arr):
-    available = [0]
-    for i in range(1, len(arr)):
-        available.append(1)
+    available = [1] * len(arr)
+    available[0] = 0
 
     middle = len(arr) // 2
     j = 1
@@ -34,7 +33,7 @@ def extra_space_rearrange(arr):
             else:
                 b_number = j - middle
                 index = b_number * 2 + 1
-                    
+
                 available[index] = 0
                 temp = arr[index]
                 arr[index] = pointed_to
