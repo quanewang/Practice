@@ -17,29 +17,23 @@ def extra_space_rearrange(arr):
     available[0] = 0
 
     middle = len(arr) // 2
-    j = 1
 
     for i in range(1, len(arr)):
         j = i
         pointed_to = arr[j]
         while available[i]:
-            if j < middle:
-                if 2 * j < len(arr):
-                    available[2 * j] = 0
-                    temp = arr[2 * j]
-                    arr[2 * j] = pointed_to
-                    j *= 2
-                    pointed_to = temp
-            else:
-                b_number = j - middle
-                index = b_number * 2 + 1
-
-                available[index] = 0
-                temp = arr[index]
-                arr[index] = pointed_to
-                j = index
-                pointed_to = temp
+            j = get_index(middle, j)
+            available[j] = 0
+            temp = arr[j]
+            arr[j] = pointed_to
+            pointed_to = temp
     return arr
+
+
+def get_index(middle, index):
+    if index < middle:
+        return 2 * index
+    return (index - middle) * 2 + 1
 
 
 print(rearrange_array(["a0", "a1", "a2", "a3", "b0", "b1", "b2", "b3"]))
