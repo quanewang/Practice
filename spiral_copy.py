@@ -7,10 +7,9 @@ def get_spiral(arr, start_row, end_row, start_col, end_col):
     if start_row == end_row and start_col == end_col:
         spiral.append(arr[start_row][start_col])
         return spiral
-    
+
     elif start_row >= end_row or start_col >= end_col:
         return spiral
-
 
     for i in range(start_col, end_col):
         spiral.append(arr[start_row][i])
@@ -21,7 +20,7 @@ def get_spiral(arr, start_row, end_row, start_col, end_col):
     if end_col - start_col != 1:
         for i in range(end_col, start_col, -1):
             spiral.append(arr[end_row][i])
-
+    
     for i in range(end_row, start_row, -1):
         spiral.append(arr[i][start_col])
 
