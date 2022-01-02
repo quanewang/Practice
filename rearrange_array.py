@@ -36,7 +36,7 @@ def get_index(middle, index):
     return (index - middle) * 2 + 1
 
 
-def swap_rearrange(arr, pair_size=1):
+def swap_rearrange(arr):
     if len(arr) == 2:
         return arr
 
@@ -80,15 +80,13 @@ def shuffle_helper(arr, end, pair_size,):
         return end
 
 
-# print(rearrange_array(["a0", "a1", "a2", "a3", "b0", "b1", "b2", "b3"]))
+print(rearrange_array(["a0", "a1", "a2", "a3", "b0", "b1", "b2", "b3"]))
 
-# print(extra_space_rearrange(["a0", "a1", "a2", "a3", "b0", "b1", "b2", "b3"]))
+print(extra_space_rearrange(["a0", "a1", "a2", "a3", "b0", "b1", "b2", "b3"]))
 
 print(swap_rearrange(["a0", "a1", "a2", "a3", "a4", "a5", "a6", "b0", "b1", "b2", "b3", "b4", "b5", "b6"]))
 
 print(swap_rearrange(["a0", "a1", "a2", "a3", "a4", "a5", "b0", "b1", "b2", "b3", "b4", "b5"]))
 
 arr = ["a0", "b0", "a2", "b2", "a4", "b4", "a1", "b1", "a3", "b3", "a5", "b5"]
-print(shuffle_helper(arr, 0, len(arr), 2))
-
-
+print(shuffle_helper(arr, len(arr), 2))
