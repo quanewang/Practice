@@ -20,14 +20,12 @@ def get_spiral(arr, start_row, end_row, start_col, end_col):
     if end_col - start_col != 1:
         for i in range(end_col, start_col, -1):
             spiral.append(arr[end_row][i])
-    
+
     for i in range(end_row, start_row, -1):
         spiral.append(arr[i][start_col])
 
     spiral.extend(get_spiral(arr, start_row + 1, end_row - 1, start_col + 1, end_col - 1))
     return spiral
-
-
 
 
 print(spiral_copy([[1, 2, 3, 4, 5],
