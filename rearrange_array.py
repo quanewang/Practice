@@ -19,13 +19,13 @@ def extra_space_rearrange(arr):
     middle = len(arr) // 2
 
     for i in range(1, len(arr)):
-        j = i
-        pointed_to = arr[j]
+        goal_index = i
+        pointed_to = arr[goal_index]
         while available[i]:
-            j = get_index(middle, j)
-            available[j] = 0
-            temp = arr[j]
-            arr[j] = pointed_to
+            goal_index = get_index(middle, goal_index)
+            available[goal_index] = 0
+            temp = arr[goal_index]
+            arr[goal_index] = pointed_to
             pointed_to = temp
     return arr
 
