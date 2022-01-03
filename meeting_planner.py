@@ -18,9 +18,7 @@ def meeting_planner(slotsA, slotsB, dur):
 
 
 def check_duration(beg, end, dur):
-    if end - beg >= dur:
-        return True
-    return False
+    return end - beg >= dur
 
 
 slotsA = [[10, 50], [60, 120], [140, 210]]
