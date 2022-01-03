@@ -5,9 +5,6 @@ def meeting_planner(slotsA, slotsB, dur):
         max_beg = max(a_beg, b_beg)
         min_end = min(a_end, b_end)
 
-        if a_beg == b_beg:
-            if verify_difference(a_beg, min_end, dur):
-                return [a_beg, a_beg + dur]
         if max_beg < min_end:
             if verify_difference(max_beg, min_end, dur):
                 return [max_beg, max_beg + dur]
