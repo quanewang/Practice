@@ -8,7 +8,8 @@ def word_count_engine(document):
     copy = copy.replace('?', '')
     copy = copy.replace('!', '')
     copy = copy.lower()
-    list_of_words = re.split('; | |, ', copy)
+    list_of_words = re.split(r"[\?\.,;\s]+", copy)
+    print(list_of_words)
 
     max_occurrence = 1
     for i in range(len(list_of_words)):
