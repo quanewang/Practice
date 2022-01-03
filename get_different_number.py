@@ -1,10 +1,10 @@
 def get_different_number(arr):  # count-sort
-    element_dict = {}
+    element_set = set()
     for i in range(len(arr)):
-        element_dict.update({arr[i]: True})
+        element_set.add(arr[i])
 
     for i in range(len(arr)):
-        if not element_dict.get(i):
+        if i not in element_set:
             return i
     return len(arr)
 
