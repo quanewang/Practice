@@ -1,7 +1,7 @@
 def get_different_number(arr):  # count-sort
     element_set = set()
-    for i in range(len(arr)):
-        element_set.add(arr[i])
+    for a in arr:
+        element_set.add(a)
 
     for i in range(len(arr)):
         if i not in element_set:
