@@ -1,4 +1,4 @@
-def get_different_number(arr):
+def get_different_number(arr):  # count-sort
     element_dict = {}
     for i in range(len(arr)):
         element_dict.update({arr[i]: True})
