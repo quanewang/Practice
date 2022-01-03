@@ -1,21 +1,18 @@
 def calc_drone_mind_energy(route):
     energy_needed = 0
     total_energy = 0
-    heights = []
-    for coordinates in route:
-        heights.append(coordinates[2])
 
-    previous_height = heights[0]
-    for i in range(len(heights)):
-        if previous_height > heights[i]:
-            total_energy += (previous_height - heights[i])
-        elif previous_height < heights[i]:
-            total_energy -= (heights[i] - previous_height)
+    previous_height = route[0][2]
+    for _, _, height in route:
+        if previous_height > height:
+            total_energy += (previous_height - height)
+        elif previous_height < height:
+            total_energy -= (height - previous_height)
 
         if total_energy < 0:
             energy_needed += abs(total_energy)
             total_energy += energy_needed
-        previous_height = heights[i]
+        previous_height = height
     return energy_needed
 
 
