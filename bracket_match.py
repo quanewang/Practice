@@ -1,7 +1,6 @@
 def bracket_match(text):
     stack = []
-    for i in range(len(text)):
-        char = text[i]
+    for char in text:
         if len(stack) == 0:
             stack.append(char)
         elif char == ')' and stack[len(stack) - 1] == '(':
