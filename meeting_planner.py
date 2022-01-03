@@ -4,6 +4,7 @@ def meeting_planner(slotsA, slotsB, dur):
         a_beg, a_end, b_beg, b_end = slotsA[i][0], slotsA[i][1], slotsB[j][0], slotsB[j][1]
         smallest_end = min(a_end, b_end)
         biggest_beg = max(a_beg, b_beg)
+
         if a_beg == b_beg:
             if verify_difference(a_beg, smallest_end, dur):
                 return [a_beg, a_beg + dur]
@@ -15,6 +16,7 @@ def meeting_planner(slotsA, slotsB, dur):
             i += 1
         else:
             j += 1
+            
     return []
 
 
