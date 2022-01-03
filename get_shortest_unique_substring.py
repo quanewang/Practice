@@ -12,13 +12,15 @@ def get_shortest_unique_substring(arr, s):
     distinct = 0
     while i < len(s):
         distinct = update(occurrence_dict, s[i], 1, distinct)
-        i += 1
+
         while distinct == len(arr):
             if len(substring) == 0 or len(substring) > (i - j):
-                substring = s[j:i]
+                substring = s[j:i + 1]
             removed = s[j]
             j += 1
             distinct = update(occurrence_dict, removed, -1, distinct)
+        
+        i += 1
 
     return substring
 
