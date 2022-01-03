@@ -8,8 +8,17 @@ def get_shortest_unique_substring(arr, s):
         occurrence_dict.update({arr[i]: 0})
 
     j = 0
-    for i in range(len(s)):
-        substring, j = helper_parse(arr, s, occurrence_dict, i, j, substring)
+    i = 0
+    distinct = 0
+    while i < len(s):
+        distinct = update(occurrence_dict, s[i], 1, distinct)
+        i += 1
+        while distinct == len(arr):
+            if len(substring) == 0 or len(substring) > (i - j):
+                substring = s[j:i]
+            removed = s[j]
+            j += 1
+            distinct = update(occurrence_dict, removed, -1, distinct)
 
     return substring
 
@@ -20,19 +29,26 @@ def helper_parse(arr, s, occurrence_dict, i, j, substring):
     return substring, j
 
 
-def check(arr, occurrence_dict, i, j, substring, s):
+def check(arr, occurrence_dict, i, j, substring, s, distincts):
     while check_helper(occurrence_dict, arr, len(arr)):
         if len(substring) == 0 or len(substring) > (i - j):
             substring = s[j:i + 1]
         removed = s[j]
         j += 1
-        update(occurrence_dict, removed, -1)
+        update(occurrence_dict, removed, -1, distincts)
     return substring, j
 
 
-def update(occurrence_dict, element, increment):
+def update(occurrence_dict, element, increment, distinct):
     occurs = occurrence_dict.get(element)
-    occurrence_dict.update({element: occurs + increment})
+    incremented = occurs + increment
+    if incremented == 1 and occurs < increment:
+        distinct += 1
+    elif incremented == 0 and occurs > increment:
+        distinct -= 1
+    occurrence_dict.update({element: incremented})
+
+    return distinct
 
 
 def check_helper(occurrence_dict, arr, length):
