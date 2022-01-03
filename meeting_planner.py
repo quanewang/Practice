@@ -6,7 +6,7 @@ def meeting_planner(slotsA, slotsB, dur):
         min_end = min(a_end, b_end)
 
         if max_beg < min_end:
-            if check_duration(max_beg, min_end, dur):
+            if min_end - max_beg >= dur:
                 return [max_beg, max_beg + dur]
 
         if min_end == a_end:
@@ -15,10 +15,6 @@ def meeting_planner(slotsA, slotsB, dur):
             j += 1
 
     return []
-
-
-def check_duration(beg, end, dur):
-    return end - beg >= dur
 
 
 slotsA = [[10, 50], [60, 120], [140, 210]]
