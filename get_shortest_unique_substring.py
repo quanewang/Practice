@@ -7,30 +7,27 @@ def get_shortest_unique_substring(arr, s):
     for i in range(len(arr)):
         occurrence_dict.update({arr[i]: 0})
 
-    queue = []
-    temp_string = ""
+    j = 0
     for i in range(len(s)):
-        temp_string, substring = helper_parse(arr, s, occurrence_dict, queue, temp_string, i, substring)
+        substring, j = helper_parse(arr, s, occurrence_dict, i, j, substring)
 
     return substring
 
 
-def helper_parse(arr, s, occurrence_dict, queue, temp_string, i, substring):
-    queue.append(s[i])
-    temp_string = temp_string + s[i]
+def helper_parse(arr, s, occurrence_dict, i, j, substring):
     update(occurrence_dict, s[i], 1)
-    temp_string, substring = check(arr, occurrence_dict, substring, temp_string, queue)
-    return temp_string, substring
+    substring, j = check(arr, occurrence_dict, i, j, substring, s)
+    return substring, j
 
 
-def check(arr, occurrence_dict, substring, temp_string, queue):
+def check(arr, occurrence_dict, i, j, substring, s):
     while check_helper(occurrence_dict, arr, len(arr)):
-        if len(substring) == 0 or len(substring) > len(temp_string):
-            substring = temp_string
-        removed = queue.pop(0)
+        if len(substring) == 0 or len(substring) > (i - j):
+            substring = s[j:i + 1]
+        removed = s[j]
+        j += 1
         update(occurrence_dict, removed, -1)
-        temp_string = temp_string.replace(temp_string[0], "", 1)
-    return temp_string, substring
+    return substring, j
 
 
 def update(occurrence_dict, element, increment):
