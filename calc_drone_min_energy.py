@@ -12,7 +12,9 @@ def calc_drone_mind_energy(route):
         if total_energy < 0:
             energy_needed += abs(total_energy)
             total_energy += energy_needed
+            
         previous_height = height
+
     return energy_needed
 
 
