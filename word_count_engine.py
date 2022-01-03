@@ -3,11 +3,13 @@ import re
 
 def word_count_engine(document):
     word_dict = {}
+
     copy = document.replace('.', '')
     copy = copy.replace('?', '')
     copy = copy.replace('!', '')
     copy = copy.lower()
-    list_of_words = re.split('; | |,', copy)
+    list_of_words = re.split('; | |, ', copy)
+
     max_occurrence = 1
     for i in range(len(list_of_words)):
         string = list_of_words[i].replace("'", '')
