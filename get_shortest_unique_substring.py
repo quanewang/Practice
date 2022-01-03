@@ -19,7 +19,7 @@ def get_shortest_unique_substring(arr, s):
             removed = s[j]
             j += 1
             distinct = update(occurrence_dict, removed, -1, distinct)
-        
+
         i += 1
 
     return substring
