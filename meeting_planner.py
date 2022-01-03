@@ -11,7 +11,7 @@ def meeting_planner(slotsA, slotsB, dur):
 
         if min_end == a_end:
             i += 1
-        else:
+        if min_end == b_end:
             j += 1
 
     return []
