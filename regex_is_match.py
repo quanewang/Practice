@@ -8,7 +8,7 @@ def match_helper(text, pattern, i=0, j=0):
     match = False
     if i >= len(text) and j >= len(pattern):
         return True
-    if j >= len(pattern):
+    if i >= len(text):
         return match
     char = pattern[j]
     text_char = text[i]
@@ -18,6 +18,8 @@ def match_helper(text, pattern, i=0, j=0):
             return match
         if compare(char, text_char):
             return match_helper(text[i + 1:len(text)], pattern[j:len(pattern)])
+        else:
+            j += 2
     elif compare(char, text_char):
         i += 1
         j += 1
@@ -49,13 +51,16 @@ text = "abcd"
 pattern = "ab*bcd"
 print(is_match(text, pattern))
 
+text = "acxbc"
+pattern = "a.*bc"
+print(is_match(text, pattern))
+
 text = "aa"
+pattern = "ab*bcd"
 print(is_match(text, pattern))
 
 text = "abcd"
 pattern = "ab.d"
 print(is_match(text, pattern))
 
-text = "acxbc"
-pattern = "a.*bc"
-print(is_match(text, pattern))
+
