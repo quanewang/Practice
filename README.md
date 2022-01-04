@@ -3,7 +3,8 @@
 38. Count and Say
 https://leetcode.com/problems/count-and-say/
 
-
+36. Valid Sudoku
+https://leetcode.com/problems/valid-sudoku/
 
 ### 233. Number of Digit One
  
@@ -580,24 +581,6 @@ Write a function drawHTree that constructs an H-tree, given its center (x and y 
 Use the function drawLine provided to implement your algorithm. In a production code, a drawLine function would render a real line between two points. However, this is not a real production environment, so to make things easier, implement drawLine such that it simply prints its arguments (the print format is left to your discretion).
 
 Analyze the time and space complexity of your algorithm. In your analysis, assume that drawLine's time and space complexities are constant, i.e. O(1).
-
-### Sudoku Solver
-Write the function sudokuSolve that checks whether a given sudoku board (i.e. sudoku puzzle) is solvable. If so, the function will returns true. Otherwise (i.e. there is no valid solution to the given sudoku board), returns false.
-
-In sudoku, the objective is to fill a 9x9 board with digits so that each column, each row, and each of the nine 3x3 sub-boards that compose the board contains all of the digits from 1 to 9. The board setter provides a partially completed board, which for a well-posed board has a unique solution. As explained above, for this problem, it suffices to calculate whether a given sudoku board has a solution. No need to return the actual numbers that make up a solution.
-
-A sudoku board is represented as a two-dimensional 9x9 array of the characters ‘1’,‘2’,…,‘9’ and the '.' character, which represents a blank space. The function should fill the blank spaces with characters such that the following rules apply:
-
-```
-In every row of the array, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-In every column of the array, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-In every 3x3 sub-board that is illustrated below, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-```
-A solved sudoku is a board with no blank spaces, i.e. all blank spaces are filled with characters that abide to the constraints above. If the function succeeds in solving the sudoku board, it’ll return true (false, otherwise).
-
-https://github.com/quanewang/public/blob/master/soduku.png
-
-Example (more examples can be found here): https://sudokukingdom.com/
 
 ### Flatten a Dictionary
 A dictionary is a type of data structure that is supported natively in all major interpreted languages such as JavaScript, Python, Ruby and PHP, where it’s known as an Object, Dictionary, Hash and Array, respectively. In simple terms, a dictionary is a collection of unique keys and their values. The values can typically be of any primitive type (i.e an integer, boolean, double, string etc) or other dictionaries (dictionaries can be nested). However, for this exercise assume that values are either an integer, a string or another dictionary.
