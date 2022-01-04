@@ -20,7 +20,7 @@ def match_helper(text, pattern, i=0, j=0):
             match = match_helper(text[i + 1:len(text)], pattern[j:len(pattern)])
             if match:
                 return match
-            match = match_helper(text[i:len(text)], pattern[j + 2:len(pattern)])
+            return match_helper(text[i:len(text)], pattern[j + 2:len(pattern)])
     elif char == "." or char == text_char:
         i += 1
         j += 1
