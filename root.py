@@ -2,6 +2,8 @@ import math
 
 
 def root(x, n):
+    if x < 1:
+        return root_helper(x, n, x, 1)
     return root_helper(x, n, 0, x)
 
 
@@ -10,6 +12,7 @@ def root_helper(x, n, start, end):
     guess_pow = math.pow(guess, n)
     if abs(x - guess_pow) <= 0.001:
         return guess
+
     if guess_pow < x - 0.001:
         return root_helper(x, n, guess, end)
     else:
@@ -18,3 +21,5 @@ def root_helper(x, n, start, end):
 
 print(root(2, 2))
 print(root(8, 4))
+print(root(1, 2))
+print(root(1/8, 2))
