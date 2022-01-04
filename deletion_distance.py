@@ -21,13 +21,6 @@ def deletion_distance(str1, str2):
     return 0
 
 
-def replace_next(string, i):
-    if i < len(string):
-        return string.replace(string[i], "", 1)
-    return string
-
-
-
 str1 = "dog"
 str2 = "frog"
 
