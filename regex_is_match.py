@@ -26,7 +26,7 @@ def match_helper(text, pattern, i=0, j=0):
         j += 1
     elif char != text_char:
         return False
-    
+
     match = match_helper(text, pattern, i, j)
     return match
 
@@ -41,9 +41,14 @@ print(is_match(text, pattern))
 text = "abbbbcd"
 print(is_match(text, pattern))
 
+text = "abcd"
+pattern = "ab*bcd"
+print(is_match(text, pattern))
+
 text = "aa"
 print(is_match(text, pattern))
 
 text = "abcd"
 pattern = "ab.d"
 print(is_match(text, pattern))
+
