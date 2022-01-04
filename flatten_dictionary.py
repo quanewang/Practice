@@ -7,12 +7,14 @@ def flatten_helper(dictionary, parent_key=""):
 
     for key in dictionary.keys():
         x = dictionary.get(key)
-        if parent_key != "":
+        if not key:
+            key = parent_key
+        elif parent_key != "":
             key = parent_key + "." + str(key)
         if type(x) == dict:
             flattened_dict.update(flatten_helper(x, key))
         else:
-            flattened_dict.update({key: x})
+            flattened_dict[key] = x
     return flattened_dict
 
 
