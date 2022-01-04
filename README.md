@@ -1,4 +1,5 @@
 ## Leetcode
+https://leetcode.com/problemset/all/
 
 38. Count and Say
 https://leetcode.com/problems/count-and-say/
@@ -29,6 +30,15 @@ https://leetcode.com/problems/permutations/
 
 78. Subsets
 https://leetcode.com/problems/subsets/
+
+23. Merge k Sorted Lists
+https://leetcode.com/problems/merge-k-sorted-lists/
+
+25. Reverse Nodes in k-Group
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+
+30. Substring with Concatenation of All Words
+https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 
 233. Number of Digit One 
 https://leetcode.com/problems/number-of-digit-one/
