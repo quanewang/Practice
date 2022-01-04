@@ -12,7 +12,6 @@ def draw_h_tree(x, y, length, depth):
 
 
 def draw_line(x, y, delta_x, delta_y):
-    print("center coordinate " + str((x, y)))
     print("start coordinate " + str((x - delta_x, y - delta_y)))
     print("end coordinate " + str((x + delta_x, y + delta_y)))
     print()
