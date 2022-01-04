@@ -40,6 +40,15 @@ https://leetcode.com/problems/reverse-nodes-in-k-group/
 30. Substring with Concatenation of All Words
 https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 
+218. The Skyline Problem
+https://leetcode.com/problems/the-skyline-problem/
+
+84. Largest Rectangle in Histogram
+https://leetcode.com/problems/largest-rectangle-in-histogram/
+
+85. Maximal Rectangle
+https://leetcode.com/problems/maximal-rectangle/
+
 233. Number of Digit One 
 https://leetcode.com/problems/number-of-digit-one/
 
