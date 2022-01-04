@@ -1,16 +1,39 @@
-### 233. Number of Digit One
- 
-Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
+## Leetcode
 
-Example 1:
-```
-Input: n = 13
-Output: 6
-Example 2:
-Input: n = 0
-Output: 0
-```
+38. Count and Say
+https://leetcode.com/problems/count-and-say/
 
+36. Valid Sudoku
+https://leetcode.com/problems/valid-sudoku/
+
+48. Rotate Image
+https://leetcode.com/problems/rotate-image/
+
+788. Rotated Digits
+https://leetcode.com/problems/rotated-digits/
+
+3. Longest Substring Without Repeating Characters
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+5. Longest Palindromic Substring
+https://leetcode.com/problems/longest-palindromic-substring/
+
+11. Container With Most Water
+https://leetcode.com/problems/container-with-most-water/
+
+64. Minimum Path Sum
+https://leetcode.com/problems/minimum-path-sum/
+
+46. Permutations
+https://leetcode.com/problems/permutations/
+
+78. Subsets
+https://leetcode.com/problems/subsets/
+
+233. Number of Digit One 
+https://leetcode.com/problems/number-of-digit-one/
+
+## Pramp
 ### Move Zeros To End
 
 Given a static-sized array of integers arr, move all zeroes in the array to the end of the array. You should preserve the relative order of items in the array.
@@ -543,6 +566,7 @@ Analyze the time and space complexities of your solution.
 
 Note: it’s called pancake sort because it resembles sorting pancakes on a plate with a spatula, where you can only use the spatula to flip some of the top pancakes in the plate. 
 
+```
 5 1 4 3 2
 2 3 4 1 5
 4 3 2 1 5
@@ -551,6 +575,7 @@ Note: it’s called pancake sort because it resembles sorting pancakes on a plat
 1 2 3 4 5
 2 1 3 4 5
 1 2 3 4 5
+```
 
 ```
 def pancake_sort(arr):
@@ -571,24 +596,6 @@ Write a function drawHTree that constructs an H-tree, given its center (x and y 
 Use the function drawLine provided to implement your algorithm. In a production code, a drawLine function would render a real line between two points. However, this is not a real production environment, so to make things easier, implement drawLine such that it simply prints its arguments (the print format is left to your discretion).
 
 Analyze the time and space complexity of your algorithm. In your analysis, assume that drawLine's time and space complexities are constant, i.e. O(1).
-
-### Sudoku Solver
-Write the function sudokuSolve that checks whether a given sudoku board (i.e. sudoku puzzle) is solvable. If so, the function will returns true. Otherwise (i.e. there is no valid solution to the given sudoku board), returns false.
-
-In sudoku, the objective is to fill a 9x9 board with digits so that each column, each row, and each of the nine 3x3 sub-boards that compose the board contains all of the digits from 1 to 9. The board setter provides a partially completed board, which for a well-posed board has a unique solution. As explained above, for this problem, it suffices to calculate whether a given sudoku board has a solution. No need to return the actual numbers that make up a solution.
-
-A sudoku board is represented as a two-dimensional 9x9 array of the characters ‘1’,‘2’,…,‘9’ and the '.' character, which represents a blank space. The function should fill the blank spaces with characters such that the following rules apply:
-
-```
-In every row of the array, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-In every column of the array, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-In every 3x3 sub-board that is illustrated below, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-```
-A solved sudoku is a board with no blank spaces, i.e. all blank spaces are filled with characters that abide to the constraints above. If the function succeeds in solving the sudoku board, it’ll return true (false, otherwise).
-
-https://github.com/quanewang/public/blob/master/soduku.png
-
-Example (more examples can be found here): https://sudokukingdom.com/
 
 ### Flatten a Dictionary
 A dictionary is a type of data structure that is supported natively in all major interpreted languages such as JavaScript, Python, Ruby and PHP, where it’s known as an Object, Dictionary, Hash and Array, respectively. In simple terms, a dictionary is a collection of unique keys and their values. The values can typically be of any primitive type (i.e an integer, boolean, double, string etc) or other dictionaries (dictionaries can be nested). However, for this exercise assume that values are either an integer, a string or another dictionary.
@@ -756,4 +763,20 @@ result = bst.find_largest_smaller_key(17)
 
 print ("Largest smaller number is %d " %(result))
 
+```
+
+
+### Koch snowflake
+Using draw functions to draw snow flakes.
+
+draw functions
+* left(degree), e.g., left(60), turn left for 60 degree
+* right(degree) 
+* draw(length), e.g., draw(10), draw line of length 10
+
+https://github.com/quanewang/public/blob/master/kochsnowflake.png
+
+```
+def koch(length=1, depth=0):
+    path
 ```
