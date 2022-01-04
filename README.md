@@ -990,3 +990,18 @@ class Solution(object):
         """
         
 ```
+
+### Koch snowflake
+Using draw functions to draw snow flakes.
+
+draw functions
+* left(degree), e.g., left(60), turn left for 60 degree
+* right(degree) 
+* draw(length), e.g., draw(10), draw line of length 10
+
+https://github.com/quanewang/public/blob/master/kochsnowflake.png
+
+```
+def koch(length=1, depth=0):
+    path
+```
