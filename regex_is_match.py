@@ -1,7 +1,5 @@
 def is_match(text, pattern):
-    i = 0
-    j = 0
-    return match_helper(text, pattern, i, j)
+    return match_helper(text, pattern)
 
 
 def match_helper(text, pattern, i=0, j=0):
