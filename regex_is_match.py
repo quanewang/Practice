@@ -16,8 +16,8 @@ def match_helper(text, pattern, i=0, j=0):
         match = match_helper(text[i:len(text)], pattern[j + 2:len(pattern)])
         if match:
             return match
-
-        return match_helper(text[i + 1:len(text)], pattern[j:len(pattern)])
+        if compare(char, text_char):
+            return match_helper(text[i + 1:len(text)], pattern[j:len(pattern)])
     elif compare(char, text_char):
         i += 1
         j += 1
