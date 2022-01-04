@@ -3,7 +3,7 @@ import math
 
 def root(x, n):
     if x < 1:
-        return root_helper(x, n, x, 1)
+        return root_helper(x, n, 0, 1)
     return root_helper(x, n, 0, x)
 
 
