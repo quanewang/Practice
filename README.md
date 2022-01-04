@@ -915,3 +915,78 @@ Example 2:
 Input: height = [1,1]
 Output: 1
 ```
+
+### 64. Minimum Path Sum
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.
+
+https://github.com/quanewang/public/blob/master/minpath.jpeg
+
+Example 1:
+
+```
+Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
+Output: 7
+```
+Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
+
+Example 2:
+```
+Input: grid = [[1,2,3],[4,5,6]]
+Output: 12
+```
+
+### 46. Permutations
+Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+
+Example 1:
+```
+Input: nums = [1,2,3]
+Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+```
+Example 2:
+```
+Input: nums = [0,1]
+Output: [[0,1],[1,0]]
+```
+Example 3:
+```
+Input: nums = [1]
+Output: [[1]]
+``` 
+
+```
+class Solution(object):
+    def permute(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        
+```
+### 78. Subsets
+Given an integer array nums of unique elements, return all possible subsets (the power set).
+
+The solution set must not contain duplicate subsets. Return the solution in any order.
+
+Example 1:
+```
+Input: nums = [1,2,3]
+Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+```
+Example 2:
+```
+Input: nums = [0]
+Output: [[],[0]]
+```
+
+```
+class Solution(object):
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        
+```
