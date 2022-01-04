@@ -1,3 +1,10 @@
+## Leetcode
+
+38. Count and Say
+https://leetcode.com/problems/count-and-say/
+
+
+
 ### 233. Number of Digit One
  
 Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
@@ -10,7 +17,7 @@ Example 2:
 Input: n = 0
 Output: 0
 ```
-
+## Pramp
 ### Move Zeros To End
 
 Given a static-sized array of integers arr, move all zeroes in the array to the end of the array. You should preserve the relative order of items in the array.
