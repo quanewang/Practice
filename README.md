@@ -1,16 +1,39 @@
-### 233. Number of Digit One
- 
-Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
+## Leetcode
 
-Example 1:
-```
-Input: n = 13
-Output: 6
-Example 2:
-Input: n = 0
-Output: 0
-```
+38. Count and Say
+https://leetcode.com/problems/count-and-say/
 
+36. Valid Sudoku
+https://leetcode.com/problems/valid-sudoku/
+
+48. Rotate Image
+https://leetcode.com/problems/rotate-image/
+
+788. Rotated Digits
+https://leetcode.com/problems/rotated-digits/
+
+3. Longest Substring Without Repeating Characters
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+5. Longest Palindromic Substring
+https://leetcode.com/problems/longest-palindromic-substring/
+
+11. Container With Most Water
+https://leetcode.com/problems/container-with-most-water/
+
+64. Minimum Path Sum
+https://leetcode.com/problems/minimum-path-sum/
+
+46. Permutations
+https://leetcode.com/problems/permutations/
+
+78. Subsets
+https://leetcode.com/problems/subsets/
+
+233. Number of Digit One 
+https://leetcode.com/problems/number-of-digit-one/
+
+## Pramp
 ### Move Zeros To End
 
 Given a static-sized array of integers arr, move all zeroes in the array to the end of the array. You should preserve the relative order of items in the array.
@@ -574,24 +597,6 @@ Use the function drawLine provided to implement your algorithm. In a production 
 
 Analyze the time and space complexity of your algorithm. In your analysis, assume that drawLine's time and space complexities are constant, i.e. O(1).
 
-### Sudoku Solver
-Write the function sudokuSolve that checks whether a given sudoku board (i.e. sudoku puzzle) is solvable. If so, the function will returns true. Otherwise (i.e. there is no valid solution to the given sudoku board), returns false.
-
-In sudoku, the objective is to fill a 9x9 board with digits so that each column, each row, and each of the nine 3x3 sub-boards that compose the board contains all of the digits from 1 to 9. The board setter provides a partially completed board, which for a well-posed board has a unique solution. As explained above, for this problem, it suffices to calculate whether a given sudoku board has a solution. No need to return the actual numbers that make up a solution.
-
-A sudoku board is represented as a two-dimensional 9x9 array of the characters ‘1’,‘2’,…,‘9’ and the '.' character, which represents a blank space. The function should fill the blank spaces with characters such that the following rules apply:
-
-```
-In every row of the array, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-In every column of the array, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-In every 3x3 sub-board that is illustrated below, all characters ‘1’,‘2’,…,‘9’ appear exactly once.
-```
-A solved sudoku is a board with no blank spaces, i.e. all blank spaces are filled with characters that abide to the constraints above. If the function succeeds in solving the sudoku board, it’ll return true (false, otherwise).
-
-https://github.com/quanewang/public/blob/master/soduku.png
-
-Example (more examples can be found here): https://sudokukingdom.com/
-
 ### Flatten a Dictionary
 A dictionary is a type of data structure that is supported natively in all major interpreted languages such as JavaScript, Python, Ruby and PHP, where it’s known as an Object, Dictionary, Hash and Array, respectively. In simple terms, a dictionary is a collection of unique keys and their values. The values can typically be of any primitive type (i.e an integer, boolean, double, string etc) or other dictionaries (dictionaries can be nested). However, for this exercise assume that values are either an integer, a string or another dictionary.
 
@@ -760,236 +765,6 @@ print ("Largest smaller number is %d " %(result))
 
 ```
 
-### 48. Rotate Image
-
-You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
-
-You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation. 
-
-https://github.com/quanewang/public/blob/master/rotate_image.png
-
-Example 1:
-```
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-Output: [[7,4,1],[8,5,2],[9,6,3]]
-```
-Example 2:
-```
-Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
-Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
-```
-
-
-```
-class Solution(object):
-    def rotate(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: None Do not return anything, modify matrix in-place instead.
-        """
-        
-```
-### 788. Rotated Digits
-
-An integer x is a good if after rotating each digit individually by 180 degrees, we get a valid number that is different from x. Each digit must be rotated - we cannot choose to leave it alone.
-
-A number is valid if each digit remains a digit after rotation. For example:
-```
-0, 1, and 8 rotate to themselves,
-2 and 5 rotate to each other (in this case they are rotated in a different direction, in other words, 2 or 5 gets mirrored),
-6 and 9 rotate to each other, and
-the rest of the numbers do not rotate to any other number and become invalid.
-```
-
-Given an integer n, return the number of good integers in the range [1, n].
-
-Example 1:
-```
-Input: n = 10
-Output: 4
-```
-Explanation: There are four good numbers in the range [1, 10] : 2, 5, 6, 9.
-
-Note that 1 and 10 are not good numbers, since they remain unchanged after rotating.
-
-Example 2:
-```
-Input: n = 1
-Output: 0
-```
-Example 3:
-```
-Input: n = 2
-Output: 1
-```
-```
-class Solution(object):
-    def rotatedDigits(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        
-```
-
-### 3. Longest Substring Without Repeating Characters
-Given a string s, find the length of the longest substring without repeating characters.
-
-Example 1:
-```
-Input: s = "abcabcbb"
-Output: 3
-```
-Explanation: The answer is "abc", with the length of 3.
-
-Example 2:
-```
-Input: s = "bbbbb"
-Output: 1
-```
-Explanation: The answer is "b", with the length of 1.
-
-Example 3:
-```
-Input: s = "pwwkew"
-Output: 3
-```
-Explanation: The answer is "wke", with the length of 3.
-Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-
-```
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-```
-
-### 5. Longest Palindromic Substring
-Given a string s, return the longest palindromic substring in s.
-
-Example 1:
-```
-Input: s = "babad"
-Output: "bab"
-```
-Explanation: "aba" is also a valid answer.
-
-Example 2:
-```
-Input: s = "cbbd"
-Output: "bb"
-```
-```
-class Solution(object):
-    def longestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """        
-```
-### 11. Container With Most Water
-
-You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
-
-Find two lines that together with the x-axis form a container, such that the container contains the most water.
-
-Return the maximum amount of water a container can store.
-
-Notice that you may not slant the container.
-
-https://github.com/quanewang/public/blob/master/container_water.jpeg 
-
-Example 1:
-```
-
-Input: height = [1,8,6,2,5,4,8,3,7]
-Output: 49
-
-```
-Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
-
-Example 2:
-```
-Input: height = [1,1]
-Output: 1
-```
-
-### 64. Minimum Path Sum
-Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
-
-Note: You can only move either down or right at any point in time.
-
-https://github.com/quanewang/public/blob/master/minpath.jpeg
-
-Example 1:
-
-```
-Input: grid = [[1,3,1],[1,5,1],[4,2,1]]
-Output: 7
-```
-Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
-
-Example 2:
-```
-Input: grid = [[1,2,3],[4,5,6]]
-Output: 12
-```
-
-### 46. Permutations
-Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
-
-Example 1:
-```
-Input: nums = [1,2,3]
-Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-```
-Example 2:
-```
-Input: nums = [0,1]
-Output: [[0,1],[1,0]]
-```
-Example 3:
-```
-Input: nums = [1]
-Output: [[1]]
-``` 
-
-```
-class Solution(object):
-    def permute(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        
-```
-### 78. Subsets
-Given an integer array nums of unique elements, return all possible subsets (the power set).
-
-The solution set must not contain duplicate subsets. Return the solution in any order.
-
-Example 1:
-```
-Input: nums = [1,2,3]
-Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
-```
-Example 2:
-```
-Input: nums = [0]
-Output: [[],[0]]
-```
-
-```
-class Solution(object):
-    def subsets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        
-```
 
 ### Koch snowflake
 Using draw functions to draw snow flakes.
