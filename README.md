@@ -1,61 +1,93 @@
-## Leetcode
+## Round 2
 https://leetcode.com/problemset/all/
 
-38. Count and Say
-https://leetcode.com/problems/count-and-say/
-
-36. Valid Sudoku
-https://leetcode.com/problems/valid-sudoku/
-
-48. Rotate Image
-https://leetcode.com/problems/rotate-image/
-
-788. Rotated Digits
-https://leetcode.com/problems/rotated-digits/
-
-3. Longest Substring Without Repeating Characters
-https://leetcode.com/problems/longest-substring-without-repeating-characters/
-
-5. Longest Palindromic Substring
-https://leetcode.com/problems/longest-palindromic-substring/
-
-11. Container With Most Water
-https://leetcode.com/problems/container-with-most-water/
-
-64. Minimum Path Sum
-https://leetcode.com/problems/minimum-path-sum/
-
-46. Permutations
-https://leetcode.com/problems/permutations/
-
-78. Subsets
-https://leetcode.com/problems/subsets/
-
-23. Merge k Sorted Lists
-https://leetcode.com/problems/merge-k-sorted-lists/
-
-25. Reverse Nodes in k-Group
-https://leetcode.com/problems/reverse-nodes-in-k-group/
-
-30. Substring with Concatenation of All Words
-https://leetcode.com/problems/substring-with-concatenation-of-all-words/
-
-218. The Skyline Problem
-https://leetcode.com/problems/the-skyline-problem/
-
-84. Largest Rectangle in Histogram
-https://leetcode.com/problems/largest-rectangle-in-histogram/
-
-85. Maximal Rectangle
+### 85. Maximal Rectangle
 https://leetcode.com/problems/maximal-rectangle/
 
-44. Wildcard Matching
+### Available Meeting Time
+
+A group of friends decided to meetup on a chosen date. Everyone in the group provided his/her schedule on that date.
+Finally you are given a joined schedule of all members, which lists all the time slots when at least one member is unavailable.
+
+The schedule is a list of lists. Each element in the list is a pair of strings
+
+```
+[
+[startTime1, endTime1],
+[startTime2, endTime2],
+[startTime3, endTime3]
+]
+```
+Start time and end time follows the format HH:MM, where the first 2 digits denote hour and the last 2 digits denote minute, delimited by :.
+
+Your job is to find all the potential time slots for the meetup. Find all time slots that
+
+between 700 and 1800
+when all group members are available
+
+Example 1:
+```
+Input: schedule = [[1600, 1630], [600, 730], [800, 920], [8:00, 900], [1730, 1920]]
+Output: [[730, 800], [920, 1600], [1630, 1730]]
+```
+Example 2:
+```
+Input: schedule = [[1200, 1730], [800, 1000], [10:00, 1130]]
+Output: [[700, 800], [1130, 1200], [1730, 1800]]
+```
+
+### 11. Container With Most Water
+https://leetcode.com/problems/container-with-most-water/
+
+### 218. The Skyline Problem
+https://leetcode.com/problems/the-skyline-problem/
+
+### 84. Largest Rectangle in Histogram
+https://leetcode.com/problems/largest-rectangle-in-histogram/
+
+### 85. Maximal Rectangle
+https://leetcode.com/problems/maximal-rectangle/
+
+### 38. Count and Say
+https://leetcode.com/problems/count-and-say/
+
+### 36. Valid Sudoku
+https://leetcode.com/problems/valid-sudoku/
+
+### 48. Rotate Image
+https://leetcode.com/problems/rotate-image/
+
+### 3. Longest Substring Without Repeating Characters
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+### 5. Longest Palindromic Substring
+https://leetcode.com/problems/longest-palindromic-substring/
+
+### 64. Minimum Path Sum
+https://leetcode.com/problems/minimum-path-sum/
+
+### 46. Permutations
+https://leetcode.com/problems/permutations/
+
+### 78. Subsets
+https://leetcode.com/problems/subsets/
+
+### 23. Merge k Sorted Lists
+https://leetcode.com/problems/merge-k-sorted-lists/
+
+### 25. Reverse Nodes in k-Group
+https://leetcode.com/problems/reverse-nodes-in-k-group/
+
+### 30. Substring with Concatenation of All Words
+https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+
+### 44. Wildcard Matching
 https://leetcode.com/problems/wildcard-matching/
 
-233. Number of Digit One 
+### 233. Number of Digit One 
 https://leetcode.com/problems/number-of-digit-one/
 
-## Pramp
+## Round 1
 ### Move Zeros To End
 
 Given a static-sized array of integers arr, move all zeroes in the array to the end of the array. You should preserve the relative order of items in the array.
