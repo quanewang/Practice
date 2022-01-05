@@ -11,7 +11,7 @@ def koch_snowflake(length=1, depth=0):
 def draw_helper(length, depth):
     count = 0
     if depth == 0:
-        print("draw(" + str(length // 3) + ")")
+        draw(length)
         return count + 1
     print()
     count += draw_helper(length, depth - 1)
@@ -28,5 +28,8 @@ def draw_helper(length, depth):
 def turn(degrees, direction):
     print("turn " + str(degrees) + " degrees " + direction)
 
+
+def draw(length):
+    print("draw(" + str(length // 3) + ")")
 
 print(koch_snowflake(9, 3))
