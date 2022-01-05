@@ -14,13 +14,13 @@ def draw_helper(length, depth):
         draw(length)
         return count + 1
     print()
-    count += draw_helper(length, depth - 1)
+    count += draw_helper(length // 3, depth - 1)
     turn(60, "left")
-    count += draw_helper(length, depth - 1)
+    count += draw_helper(length // 3, depth - 1)
     turn(120, "right")
-    count += draw_helper(length, depth - 1)
+    count += draw_helper(length // 3, depth - 1)
     turn(60, "left")
-    count += draw_helper(length, depth - 1)
+    count += draw_helper(length // 3, depth - 1)
     print()
     return count
 
@@ -30,6 +30,6 @@ def turn(degrees, direction):
 
 
 def draw(length):
-    print("draw(" + str(length // 3) + ")")
+    print("draw(" + str(length) + ")")
 
-print(koch_snowflake(9, 3))
+print(koch_snowflake(27, 3))
