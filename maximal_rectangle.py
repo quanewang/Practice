@@ -9,7 +9,6 @@ def maximal_rectangle(matrix):
                     if rectangle_sum == (end_row + 1 - start_row) * (end_col + 1 - start_col):
                         if rectangle_sum > max_sum:
                             max_sum = rectangle_sum
-    print(sums_dict)
     return max_sum
 
 
