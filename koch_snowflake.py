@@ -24,6 +24,7 @@ def draw_helper(length, depth):
     print()
     return count
 
+
 def turn(degrees, direction):
     print("turn " + str(degrees) + " degrees " + direction)
 
