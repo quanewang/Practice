@@ -22,8 +22,10 @@ def available_meeting_time(schedule):
 
 def merge_blocks(schedule):
     copy = []
-    previous_block = schedule[0]
+    previous_block = None
     for block in schedule:
+        if previous_block is None:
+            previous_block = block
         if previous_block[0] == block[0] or previous_block[1] == block[0]:
             block[0] = previous_block[0]
             previous_block = block
