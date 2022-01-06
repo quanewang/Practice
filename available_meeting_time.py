@@ -1,8 +1,8 @@
 def available_meeting_time(schedule):
     available = []
     copy = sorted(schedule)
-    merge_blocks(copy)
-    
+    copy = merge_blocks(copy)
+
     if copy[0][0] > 700:
         available.append([700, copy[0][0]])
 
@@ -22,9 +22,10 @@ def available_meeting_time(schedule):
 
 def merge_blocks(schedule):
     for i in range(len(schedule)):
-        if i < len(schedule) - 1 and schedule[i][0] == schedule[i + 1][0]:
+        if i < len(schedule) - 1 and (schedule[i][0] == schedule[i + 1][0] or schedule[i][1] == schedule[i + 1][0]):
             schedule[i][1] = schedule[i + 1][1]
             schedule.pop(i)
+    return schedule
 
 
 schedule = [[1600, 1630], [600, 730], [800, 920], [800, 900], [1730, 1920]]
