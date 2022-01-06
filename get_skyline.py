@@ -13,11 +13,8 @@ def get_skyline(buildings):
             current_height = 0
             skyline.append([max_end, current_height])
 
-        if not heap_ends:  # empty heap == new building is start of block
+        if not heap_ends or building_height > current_height:  # empty heap == new building is start of block
             skyline.append([building[0], building[2]])
-            
-        elif building_height > current_height:
-            skyline.append([building[0], building_height])
 
         elif building_height < current_height:
             if heap_ends[0][0] > building[0]:
