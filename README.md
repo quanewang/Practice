@@ -18,7 +18,7 @@ The schedule is a list of lists. Each element in the list is a pair of strings
 [startTime3, endTime3]
 ]
 ```
-Start time and end time follows the format HH:MM, where the first 2 digits denote hour and the last 2 digits denote minute, delimited by :.
+Start time and end time follows the format HHMM, where the first 2 digits denote hour and the last 2 digits denote minute.
 
 Your job is to find all the potential time slots for the meetup. Find all time slots that
 
@@ -27,12 +27,12 @@ when all group members are available
 
 Example 1:
 ```
-Input: schedule = [[1600, 1630], [600, 730], [800, 920], [8:00, 900], [1730, 1920]]
+Input: schedule = [[1600, 1630], [600, 730], [800, 920], [800, 900], [1730, 1920]]
 Output: [[730, 800], [920, 1600], [1630, 1730]]
 ```
 Example 2:
 ```
-Input: schedule = [[1200, 1730], [800, 1000], [10:00, 1130]]
+Input: schedule = [[1200, 1730], [800, 1000], [1000, 1130]]
 Output: [[700, 800], [1130, 1200], [1730, 1800]]
 ```
 
