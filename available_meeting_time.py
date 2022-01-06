@@ -21,15 +21,28 @@ def available_meeting_time(schedule):
 
 
 def merge_blocks(schedule):
-    for i in range(len(schedule)):
-        if i < len(schedule) - 1 and (schedule[i][0] == schedule[i + 1][0] or schedule[i][1] == schedule[i + 1][0]):
-            schedule[i][1] = schedule[i + 1][1]
-            schedule.pop(i)
-    return schedule
+    copy = []
+    previous_block = schedule[0]
+    for block in schedule:
+        if previous_block[0] == block[0] or previous_block[1] == block[0]:
+            block[0] = previous_block[0]
+            previous_block = block
+        else:
+            copy.append(previous_block)
+            previous_block = block
+    copy.append(previous_block)
+    return copy
 
 
 schedule = [[1600, 1630], [600, 730], [800, 920], [800, 900], [1730, 1920]]
 print(available_meeting_time(schedule))
+print(merge_blocks(sorted(schedule)))
+
 
 schedule = [[1200, 1730], [800, 1000], [1000, 1130]]
+print(merge_blocks(sorted(schedule)))
+print(available_meeting_time(schedule))
+
+schedule = [[1200, 1730]]
+print(merge_blocks(sorted(schedule)))
 print(available_meeting_time(schedule))
