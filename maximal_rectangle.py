@@ -32,6 +32,7 @@ def populate_sum(matrix, sum_arr, row, col):
     sum_arr[row][col] = rectangle_sum
     return None
 
+
 def get_sum(matrix, start_row, start_col, end_row, end_col, sum_arr):
     rectangle_sum = sum_arr[end_row][end_col]
     if start_row - 1 >= 0:
