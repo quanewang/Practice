@@ -36,6 +36,7 @@ def get_sum(matrix, start_row, start_col, end_row, end_col, sum_arr):
             rectangle_sum += sum_arr[start_row - 1][start_col - 1]
     return rectangle_sum
 
+
 matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]
 print(maximal_rectangle(matrix))
 
