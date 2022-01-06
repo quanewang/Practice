@@ -20,9 +20,6 @@ def available_meeting_time(schedule):
     return available
 
 
-    return available
-
-
 def merge_blocks(schedule):
     for i in range(len(schedule)):
         if i < len(schedule) - 1 and schedule[i][0] == schedule[i + 1][0]:
