@@ -8,6 +8,10 @@ def get_skyline(buildings):
     for building in buildings:
         if not max_heap or building[2] > -max_heap[0][0]:
             skyline.append([building[0], building[2]])
+
+        elif building[0] > max_heap[0][1]:
+            max_heap = []
+
         elif building[0] > max_heap[0][1]:
             while max_heap and building[0] > max_heap[0][1]:
                 largest_building = heapq.heappop(max_heap)
