@@ -1,7 +1,7 @@
 def available_meeting_time(schedule):
     available = []
     copy = sorted(schedule)
-    copy = merge_blocks(copy)
+    # copy = merge_blocks(copy)
 
     if copy[0][0] > 700:
         available.append([700, copy[0][0]])
