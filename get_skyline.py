@@ -3,24 +3,24 @@ import heapq
 
 def get_skyline(buildings):
     skyline = []
-    max_heap = []
+    max_heap = MaxHeap()
     i = 0
     while i < len(buildings):
         building = buildings[i]
-        while max_heap and building[0] > max_heap[0][1]:
-            largest_building = heapq.heappop(max_heap)
-            while max_heap and largest_building[1] > max_heap[0][1]:
-                heapq.heappop(max_heap)
-            if max_heap:
-                next_building = max_heap[0]
+        while (not max_heap.isEmpty()) and building[0] > max_heap.peek()[1]:
+            largest_building = max_heap.pop()
+            while (not max_heap.isEmpty()) and largest_building[1] > max_heap.peek()[1]:
+                max_heap.pop()
+            if not max_heap.isEmpty():
+                next_building = max_heap.peek()
                 if largest_building[1] < next_building[1]:
                     if largest_building[0] != next_building[0]:
-                        skyline.append([largest_building[1], -next_building[0]])
+                        skyline.append([largest_building[1], next_building[0]])
                 elif largest_building[1] == next_building[1]:
                     pass
                 else:
-                    heapq.heappop(max_heap)
-            if not max_heap:
+                    max_heap.pop()
+            if max_heap.isEmpty():
                 skyline.append([largest_building[1], 0])
 
         j = i + 1
@@ -30,28 +30,48 @@ def get_skyline(buildings):
                 max_height = buildings[j][2]
             j += 1
 
-        if not max_heap or max_height > -max_heap[0][0]:
+        if max_heap.isEmpty() or max_height > max_heap.peek()[0]:
             skyline.append([building[0], max_height])
-        heapq.heappush(max_heap, [-max_height, building[1]])
+        max_heap.push([max_height, building[1]])
         i += 1
 
-    while max_heap:
-        largest_building = heapq.heappop(max_heap)
-        while max_heap and largest_building[1] > max_heap[0][1]:
-            heapq.heappop(max_heap)
-        if max_heap:
-            next_building = max_heap[0]
+    while not max_heap.isEmpty():
+        largest_building = max_heap.pop()
+        while (not max_heap.isEmpty()) and largest_building[1] > max_heap.peek()[1]:
+            max_heap.pop()
+        if not max_heap.isEmpty():
+            next_building = max_heap.peek()
             if largest_building[1] < next_building[1]:
                 if largest_building[0] != next_building[0]:
-                    skyline.append([largest_building[1], -next_building[0]])
+                    skyline.append([largest_building[1], next_building[0]])
             elif largest_building[1] == next_building[1]:
                 pass
             else:
-                heapq.heappop(max_heap)
-        if not max_heap:
+                max_heap.pop()
+        if max_heap.isEmpty():
             skyline.append([largest_building[1], 0])
 
     return skyline
+
+
+class MaxHeap:
+    def __init__(self):
+        self.heap = []
+
+    def push(self, element):
+        copy = [-element[0], element[1]]
+        heapq.heappush(self.heap, copy)
+
+    def pop(self):
+        return heapq.heappop(self.heap)
+
+    def peek(self):
+        if not self.isEmpty():
+            height, end = -self.heap[0][0], self.heap[0][1]
+            return [height, end]
+
+    def isEmpty(self):
+        return len(self.heap) == 0
 
 
 buildings = [[2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
