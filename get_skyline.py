@@ -4,8 +4,8 @@ import heapq
 def get_skyline(buildings):
     skyline = []
     max_heap = []
-    copy = merge_blocks(buildings)
-    for building in copy:
+    for i in range(len(buildings)):
+        building = buildings[i]
         while max_heap and building[0] > max_heap[0][1]:
             largest_building = heapq.heappop(max_heap)
             if max_heap:
@@ -19,7 +19,7 @@ def get_skyline(buildings):
                     heapq.heappop(max_heap)
             if not max_heap:
                 skyline.append([largest_building[1], 0])
-
+        
         if not max_heap or building[2] > -max_heap[0][0]:
             skyline.append([building[0], building[2]])
 
@@ -56,39 +56,58 @@ def check_heap(heap_ends, building_start, building_height):
 
     return adjusted_start
 
+
 def merge_blocks(buildings):
     copy = []
     previous_block = None
-    for block in buildings:
+    for i in range(len(buildings) - 1):
         if previous_block is None:
-            previous_block = block
-        if previous_block[0] == block[0] and previous_block[1] == block[1]:
-            height = max(block[2], previous_block[2])
-            block[2] = height
-            previous_block = block
-        elif previous_block[0] == block[0]:
-            if block[2] > previous_block[2]:
-                previous_block = block
+            previous_block = merge(buildings[i], buildings[i + 1])
         else:
-            copy.append(previous_block)
-            previous_block = block
+            previous_block = merge(previous_block, buildings[i])
+        if len(previous_block) == 2:
+            copy.append(previous_block[0])
+            copy.append(previous_block[1])
+            previous_block = buildings[i + 1]
     copy.append(previous_block)
     return copy
 
 
+def merge(first, second):
+    if first[0] == second[0] and first[1] == second[1]:
+        height = max(first[2], second[2])
+        return [first[0], first[1], height]
+
+    elif first[0] == second[0]:
+        if first[2] <= second[2]:
+            return second
+        else:
+            return first, [first[1], second[1], second[2]]
+
+    elif first[1] == second[1]:
+        if first[2] >= second[2]:
+            return [first]
+        else:
+            return [first[0], second[0], first[2]], second
+
+    return first, second
+
+
 buildings = [[2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
-#print(get_skyline(buildings))
-
-buildings = [[0, 2, 3], [2, 5, 3], [5, 10, 6], [7, 10, 8]]
-#print(get_skyline(buildings))
-
-buildings = [[2, 6, 10], [3, 7, 15], [4, 10, 19], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
-#print(get_skyline(buildings))
-
-buildings = [[1, 2, 1], [1, 2, 2], [1, 2, 3], [2, 6, 10], [3, 7, 15], [4, 10, 19], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
-print(merge_blocks(buildings))
 print(get_skyline(buildings))
 
-buildings = [[1,20,1],[1,21,2],[1,22,3]]
-print(merge_blocks(buildings))
+buildings = [[0, 2, 3], [2, 5, 3], [5, 10, 6], [7, 10, 8]]
+print(get_skyline(buildings))
 
+buildings = [[2, 6, 10], [3, 7, 15], [4, 10, 19], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
+print(get_skyline(buildings))
+
+buildings = [[1, 2, 1], [1, 2, 2], [1, 2, 3], [2, 6, 10], [3, 7, 15], [4, 10, 19], [5, 12, 12], [15, 20, 10],
+             [19, 24, 8]]
+print(get_skyline(buildings))
+
+buildings = [[1, 20, 1], [1, 21, 2], [1, 22, 3]]
+print(get_skyline(buildings))
+
+buildings = [[3, 7, 8], [3, 8, 7], [3, 9, 6], [3, 10, 5], [3, 11, 4], [3, 12, 3], [3, 13, 2], [3, 14, 1]]
+print(get_skyline(buildings))
