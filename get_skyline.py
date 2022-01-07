@@ -59,16 +59,16 @@ class MaxHeap:
         self.heap = []
 
     def push(self, element):
-        copy = [-element[0], element[1]]
+        copy = [-element[0], element]
         heapq.heappush(self.heap, copy)
 
     def pop(self):
-        return heapq.heappop(self.heap)
+        copy = heapq.heappop(self.heap)
+        return copy[1]
 
     def peek(self):
         if not self.isEmpty():
-            height, end = -self.heap[0][0], self.heap[0][1]
-            return [height, end]
+            return self.heap[0][1]
 
     def isEmpty(self):
         return len(self.heap) == 0
