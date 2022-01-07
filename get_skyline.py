@@ -17,8 +17,8 @@ def get_skyline(buildings):
             skyline.append([building[0], building[2]])
 
         elif building_height < current_height:
-            if heap_ends[0][0] > building[0]:
-                skyline.append([heapq.heappop(heap_ends)[0], building[2]])
+            adjusted_start = check_heap(heap_ends, building[0], building_height)
+            skyline.append([adjusted_start, building[2]])
 
         if building[1] > max_end:
             max_end = building[1]
@@ -30,7 +30,18 @@ def get_skyline(buildings):
     return skyline
 
 
-buildings = [[2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
+def check_heap(heap_ends, building_start, building_height):
+    adjusted_start = building_start
+    for end_height_pair in heap_ends:
+        end, height = end_height_pair[0], end_height_pair[1]
+        if end > building_start and height > building_height:
+            if end > adjusted_start:
+                adjusted_start = end
+    return adjusted_start
+
+
+
+buildings = [[2, 6, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
 print(get_skyline(buildings))
 
 buildings = [[0, 2, 3], [2, 5, 3]]
