@@ -3,31 +3,37 @@ import heapq
 
 def get_skyline(buildings):
     skyline = []
-    heap_ends = []
-    current_height = 0
-    max_end = 0
+    max_heap = []
+
     for building in buildings:
-        building_height = building[2]
-        if building != buildings[0] and building[0] > max_end:
-            heap_ends = []
-            current_height = 0
-            skyline.append([max_end, current_height])
-
-        if not heap_ends or building_height > current_height:  # empty heap == new building is start of block
+        if not max_heap or building[2] > -max_heap[0][0]:
             skyline.append([building[0], building[2]])
+        elif building[0] > max_heap[0][1]:
+            while max_heap and building[0] > max_heap[0][1]:
+                largest_building = heapq.heappop(max_heap)
+                if max_heap:
+                    next_building = max_heap[0]
+                    if largest_building[1] < next_building[1]:
+                        skyline.append([largest_building[1], -next_building[0]])
+                    else:
+                        heapq.heappop(max_heap)
+                if not max_heap:
+                    skyline.append([largest_building[1], 0])
+            skyline.append([building[0], building[2]])
+        heapq.heappush(max_heap, [-building[2], building[1]])
 
-        elif building_height < current_height:
-            adjusted_start = check_heap(heap_ends, building[0], building_height)
-            skyline.append([adjusted_start, building[2]])
-
-        if building[1] > max_end:
-            max_end = building[1]
-        current_height = building_height
-        heapq.heappush(heap_ends, building)
-
-    skyline.append([max_end, 0])
-
+    while max_heap:
+        largest_building = heapq.heappop(max_heap)
+        if max_heap:
+            next_building = max_heap[0]
+            if largest_building[1] < next_building[1]:
+                skyline.append([largest_building[1], -next_building[0]])
+            else:
+                heapq.heappop(max_heap)
+        if not max_heap:
+            skyline.append([largest_building[1], 0])
     return skyline
+
 
 
 def check_heap(heap_ends, building_start, building_height):
@@ -45,7 +51,7 @@ def check_heap(heap_ends, building_start, building_height):
     return adjusted_start
 
 
-buildings = [[2, 6, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
+buildings = [[2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8]]
 print(get_skyline(buildings))
 
 buildings = [[0, 2, 3], [2, 5, 3]]
