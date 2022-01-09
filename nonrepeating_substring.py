@@ -32,6 +32,7 @@ def longest_non_repeating_substring(string):
 
     return max_count
 
+
 s = "kdgjyzkjhglfp"
 print(longest_non_repeating_substring(s))
 
