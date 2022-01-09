@@ -2,6 +2,10 @@
 ### 150. Evaluate Reverse Polish Notation
 https://leetcode.com/problems/evaluate-reverse-polish-notation/
 
+### 51. N-Queens
+https://leetcode.com/problems/n-queens/
+
+
 ## Round 2
 https://leetcode.com/problemset/all/
 
