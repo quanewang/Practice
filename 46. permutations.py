@@ -1,4 +1,4 @@
-def permutations(nums):
+def get_permutations(nums):
     perms = []
     if len(nums) == 1:
         return [nums]
@@ -15,10 +15,10 @@ def permutations(nums):
 
 
 nums = [1, 2, 3]
-print(permutations(nums))
+print(get_permutations(nums))
 
 nums = [0, 1]
-print(permutations(nums))
+print(get_permutations(nums))
 
 nums = [1]
-print(permutations(nums))
+print(get_permutations(nums))
