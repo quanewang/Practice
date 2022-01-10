@@ -1,32 +1,25 @@
-import sys
-
-
 def minimum_path_sum(grid):
-    start = grid[0][0]
-    queue = [(0, 0, start)]
-    min_sum = sys.maxsize
-    sum_dict = {(0, 0): start}
-    while queue:
-        i, j, sum = queue.pop(0)
-        print(i, j)
-        if i == len(grid) - 1 and j == len(grid[i]) - 1:
-            if sum < min_sum:
-                min_sum = sum
-        if sum_dict.get((i, j)) is None:
-            sum_dict.update({(i, j): sum})
-            if j + 1 < len(grid[i]):
-                queue.append([i, j + 1, sum + grid[i][j + 1]])
-            if i + 1 < len(grid):
-                queue.append([i + 1, j, sum + grid[i + 1][j]])
-        else:
-            if sum_dict.get((i, j)) > sum:
-                sum_dict.update({(i, j): sum})
-            if j + 1 < len(grid[i]) and sum_dict.get((i, j)):
-                queue.append([i, j + 1, sum + grid[i][j + 1]])
-            if i + 1 < len(grid):
-                queue.append([i + 1, j, sum + grid[i + 1][j]])
+    m = len(grid)
+    n = len(grid[0])
+    copy = [[0] * n]
+    for row in range(m - 1):
+        copy.append([0] * n)
 
-    return min_sum
+    copy[m - 1][n - 1] = grid[m - 1][n - 1]
+
+    for i in range(m).__reversed__():
+        j = n - 1
+        while j >= 0:
+            min_sum = grid[i][j]
+            if i + 1 < m and j + 1 < n:
+                min_sum += min(copy[i + 1][j], copy[i][j + 1])
+            elif i + 1 < m:
+                min_sum += copy[i + 1][j]
+            elif j + 1 < n:
+                min_sum += copy[i][j + 1]
+            copy[i][j] = min_sum
+            j -= 1
+    return copy[0][0]
 
 
 grid = [[1, 3, 1], [1, 5, 1], [4, 2, 1]]

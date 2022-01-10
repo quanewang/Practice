@@ -13,8 +13,6 @@ def paths(n, i = 0, j = 0):
     return p
 
 
-
-
 def nonRecursivePaths(n):
     p = 0
     if n == 0:
@@ -37,10 +35,6 @@ def nonRecursivePaths(n):
             j -= 1
     return a[0][0]
 
-
-
-
-    return 0
 
 print(paths(5, 0, 0))
 print(nonRecursivePaths(5))
