@@ -17,10 +17,10 @@ def merge_k_lists(lists):
     while get_numbers:
         minimum, index = heapq.heappop(get_numbers)
         if merged_node is None:
-            merged_node = ListNode(minimum)
+            merged_node = lists[index]
             copy = merged_node
         else:
-            copy.next = ListNode(minimum)
+            copy.next = lists[index]
             copy = copy.next
         if lists[index] is not None and lists[index].next is not None:
             lists[index] = lists[index].next
