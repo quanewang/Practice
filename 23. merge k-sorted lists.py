@@ -1,4 +1,4 @@
-import sys
+import heapq
 
 
 class ListNode:
@@ -13,14 +13,13 @@ def merge_k_lists(lists):
 
     for j in range(len(lists)):
         if lists[j]:
-            get_numbers.append((lists[j].val, j))
+            heapq.heappush(get_numbers, (lists[j].val, j))
     while get_numbers:
-        minimum, index = min(get_numbers)
-        get_numbers.remove((minimum, index))
+        minimum, index = heapq.heappop(get_numbers)
         merged_numbers.append(minimum)
         if lists[index] is not None and lists[index].next is not None:
             lists[index] = lists[index].next
-            get_numbers.append((lists[index].val, index))
+            heapq.heappush(get_numbers, (lists[index].val, index))
 
     if merged_numbers:
         merged_node = ListNode(merged_numbers[0])
@@ -36,4 +35,9 @@ first_row = ListNode(1, ListNode(4, ListNode(5)))
 second_row = ListNode(1, ListNode(3, ListNode(4)))
 third_row = ListNode(2, ListNode(6))
 lists = [ListNode(1, ListNode(4, ListNode(5))), ListNode(1, ListNode(3, ListNode(4))), ListNode(2, ListNode(6))]
+print(merge_k_lists(lists))
+
+first_row = ListNode(1, ListNode(2, ListNode(2)))
+second_row = ListNode(1, ListNode(1, ListNode(2)))
+lists = [first_row, second_row]
 print(merge_k_lists(lists))
