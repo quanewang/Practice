@@ -8,27 +8,25 @@ class ListNode:
 
 
 def merge_k_lists(lists):
-    merged_numbers = []
     get_numbers = []
-
+    merged_node = None
+    copy = None
     for j in range(len(lists)):
         if lists[j]:
             heapq.heappush(get_numbers, (lists[j].val, j))
     while get_numbers:
         minimum, index = heapq.heappop(get_numbers)
-        merged_numbers.append(minimum)
+        if merged_node is None:
+            merged_node = ListNode(minimum)
+            copy = merged_node
+        else:
+            copy.next = ListNode(minimum)
+            copy = copy.next
         if lists[index] is not None and lists[index].next is not None:
             lists[index] = lists[index].next
             heapq.heappush(get_numbers, (lists[index].val, index))
 
-    if merged_numbers:
-        merged_node = ListNode(merged_numbers[0])
-        copy = merged_node
-        for i in range(1, len(merged_numbers)):
-            copy.next = ListNode(merged_numbers[i])
-            copy = copy.next
-        return merged_node
-    return None
+    return merged_node
 
 
 first_row = ListNode(1, ListNode(4, ListNode(5)))
