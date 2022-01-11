@@ -5,6 +5,10 @@ class ListNode:
 
 
 def reverse_k_group(head, k):
+    count = 0
+    pointer = head
+    while pointer is not None and count < k:
+        
     pass
 
 
