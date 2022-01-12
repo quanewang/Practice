@@ -14,19 +14,16 @@ def reverse_k_group(head, k):
         current = current.next
 
     reverse_count = n // k
-    start = head
-    h = head
-    t = head
-    for i in range(reverse_count):
-        if i == 0:
-            h, t = reverse_list(start, k)
-            start = t
-        else:
-            hea, start = reverse_list(start, k)
-            t.next = hea
-            t = start
+    return recursive_k_reverse(head, k, reverse_count)
 
-        start = start.next
+
+def recursive_k_reverse(head, k, m):
+    if m == 0:
+        return head
+    else:
+        h, t = reverse_list(head, k)
+        next_head = recursive_k_reverse(t.next, k, m - 1)
+        t.next = next_head
     return h
 
 
