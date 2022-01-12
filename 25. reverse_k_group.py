@@ -5,13 +5,56 @@ class ListNode:
 
 
 def reverse_k_group(head, k):
-    count = 0
-    pointer = head
-    while pointer is not None and count < k:
-        
-    pass
+    if k == 1:
+        return head
+    n = 0
+    current = head
+    while current is not None:  # get the length of the linked list
+        n += 1
+        current = current.next
+
+    reverse_count = n // k
+    start = head
+    h = head
+    t = head
+    for i in range(reverse_count):
+        if i == 0:
+            h, t = reverse_list(start, k)
+            start = t
+        else:
+            hea, start = reverse_list(start, k)
+            t.next = hea
+            t = start
+
+        start = start.next
+    return h
 
 
-head = [1,2,3,4,5]
-print(reverse_k_group(head, 2))
+def reverse_list(start, k):
+    if k == 2:
+        head = start
+        tail = start.next
+        p2 = tail.next
+        tail.next = head
+        head.next = p2
+        return tail, head
+    else:
+        h, t = reverse_list(start.next, k - 1)
+        p2 = t.next
+        start.next = p2
+        t.next = start
+        t = start
+    return h, t
+
+
+head = ListNode(1, ListNode(2, ListNode(3)))
 print(reverse_k_group(head, 3))
+
+head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+print(reverse_k_group(head, 2))
+
+print(reverse_k_group(head, 1))
+
+head = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
+print(reverse_k_group(head, 4))
+
