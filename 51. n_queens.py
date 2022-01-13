@@ -11,7 +11,7 @@ def n_queens(n):
 
 def try_square(i, board, invalid_squares, solution):
     solutions = []
-    if i > len(board):
+    if i == len(board):
         return solutions
     for j in range(len(board)):
         if validate(i, j, invalid_squares):
