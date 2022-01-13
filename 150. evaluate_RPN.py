@@ -34,7 +34,19 @@ def infix_to_postfix(expression):
     operators = []
     operands = []
     for char in expression:
-        if char == '*' or char == '+':
+        if char == '+' or char == "-":
+            if operators and (operators[len(operators) - 1] == "-" or operators[len(operators) - 1] == "+"):
+                operator = operators.pop(len(operators) - 1)
+                e_0 = operands.pop(len(operands) - 1)
+                e_1 = operands.pop(len(operands) - 1)
+                operands.insert(len(operands), e_1 + e_0 + operator)
+            operators.append(char)
+        elif char == "*" or char == "/":
+            if operators and (operators[len(operators) - 1] == "*" or operators[len(operators) - 1] == "'/"):
+                operator = operators.pop(len(operators) - 1)
+                e_0 = operands.pop(len(operands) - 1)
+                e_1 = operands.pop(len(operands) - 1)
+                operands.insert(len(operands), e_1 + e_0 + operator)
             operators.append(char)
         else:
             operands.append(char)
@@ -43,7 +55,7 @@ def infix_to_postfix(expression):
         operator = operators.pop(len(operators) - 1)
         e_0 = operands.pop(len(operands) - 1)
         e_1 = operands.pop(len(operands) - 1)
-        if operator == '*' and len(e_0) != 1:
+        if (operator == '*' or operator == '/') and len(e_0) != 1:
             operands.insert(len(operands), e_1 + e_0[0] + operator + e_0[1:len(e_0)])
         else:
             operands.insert(len(operands), e_1 + e_0 + operator)
@@ -59,8 +71,11 @@ print(infix_to_postfix(expression))
 expression = "1*2*3+4"
 print(infix_to_postfix(expression))
 
-expression = "1+2+3+4"
+expression = "1-2-3*4"
 print(infix_to_postfix(expression))
 
 expression = "1*2*3*4"
+print(infix_to_postfix(expression))
+
+expression = "1/2*3+4"
 print(infix_to_postfix(expression))
