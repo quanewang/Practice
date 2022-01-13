@@ -14,6 +14,18 @@ https://leetcode.com/problems/integer-to-english-words/
 ### 91. Decode Ways
 https://leetcode.com/problems/decode-ways/
 
+### 452. Minimum Number of Arrows to Burst Balloons
+https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+
+### 15. 3Sum
+https://leetcode.com/problems/3sum/
+
+### 16. 3Sum Closest
+https://leetcode.com/problems/3sum-closest/
+
+### 24. Swap Nodes in Pairs
+https://leetcode.com/problems/swap-nodes-in-pairs/
+
 ## Round 2
 https://leetcode.com/problemset/all/
 
