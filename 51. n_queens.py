@@ -12,27 +12,26 @@ def n_queens(n):
         copy = board.copy()
         valid_copy = valid_squares.copy()
         solution = set()
-        solution = try_square(0, j, copy, valid_copy, solution)
-        if len(solution) == n:
-            for (i, j) in solution:
-                temp = copy[i][0:j]
-                copy[i] = temp + "Q" + copy[i][j + 1:len(copy[i])]
-            solutions.append(copy)
+        solutions.extend(try_square(0, j, copy, valid_copy, solution))
     return solutions
 
 
 def try_square(i, j, copy, valid_squares, solution, count=1):
+    solutions = []
     validate_squares(i, j, copy, valid_squares)
     solution.add((i, j))
-    if len(solution) == len(copy) or not valid_squares:
-        return solution
+    if len(solution) == len(copy):
+        copied = copy.copy()
+        for (i, j) in solution:
+            temp = copied[i][0:j]
+            copied[i] = temp + "Q" + copied[i][j + 1:len(copied[i])]
+        solutions.append(copied)
+        return solutions
     for j in range(len(copy)):
         if (i + 1, j) in valid_squares:
-            sol = try_square(i + 1, j, copy, valid_squares.copy(), solution.copy(), count + 1)
-            if len(sol) == len(copy):
-                return sol
+            solutions.extend(try_square(i + 1, j, copy, valid_squares.copy(), solution.copy(), count + 1))
 
-    return set()
+    return solutions
 
 
 def validate_squares(i, j, copy, valid_squares):
@@ -66,3 +65,4 @@ def validate_squares(i, j, copy, valid_squares):
 
 print(n_queens(4))
 print(n_queens(1))
+print(n_queens(5))
