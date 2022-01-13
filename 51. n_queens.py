@@ -13,10 +13,10 @@ def n_queens(n):
         valid_copy = valid_squares.copy()
         solution = set()
         solution = try_square(0, j, copy, valid_copy, solution)
-        if len(solution) == 4:
+        if len(solution) == n:
             for (i, j) in solution:
                 temp = copy[i][0:j]
-                copy[i] = temp + "Q" + copy[i][j:len(copy[i])]
+                copy[i] = temp + "Q" + copy[i][j + 1:len(copy[i])]
             solutions.append(copy)
     return solutions
 
@@ -24,19 +24,19 @@ def n_queens(n):
 def try_square(i, j, copy, valid_squares, solution, count=1):
     validate_squares(i, j, copy, valid_squares)
     solution.add((i, j))
-    if len(solution) == 4 or not valid_squares:
+    if len(solution) == len(copy) or not valid_squares:
         return solution
     for j in range(len(copy)):
         if (i + 1, j) in valid_squares:
             sol = try_square(i + 1, j, copy, valid_squares.copy(), solution.copy(), count + 1)
-            if len(sol) == 4:
+            if len(sol) == len(copy):
                 return sol
 
     return set()
 
 
 def validate_squares(i, j, copy, valid_squares):
-    if not validate_squares:
+    if not valid_squares:
         return
     for row in range(len(copy)):
         if (row, j) in valid_squares:
@@ -65,3 +65,4 @@ def validate_squares(i, j, copy, valid_squares):
 
 
 print(n_queens(4))
+print(n_queens(1))
