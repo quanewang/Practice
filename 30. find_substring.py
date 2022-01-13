@@ -13,7 +13,7 @@ def find_substring(s, words):
         j, is_string = check_string(sub, word_dict.copy(), 0, len(words[0]), word_dict)
         if is_string:
             indexes.append(i)
-        i += j
+        i += 1
 
     return indexes
 
