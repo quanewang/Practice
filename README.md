@@ -1,3 +1,13 @@
+## Practice Journal 
+
+One easy or medium problem per week
+* https://leetcode.com/problemset/algorithms/?difficulty=EASY&page=1
+* https://leetcode.com/problemset/algorithms/?page=1&difficulty=MEDIUM
+
+One dynamic programming per week
+* https://leetcode.com/tag/dynamic-programming/
+
+
 ## Round 3
 ### 150. Evaluate Reverse Polish Notation
 https://leetcode.com/problems/evaluate-reverse-polish-notation/
