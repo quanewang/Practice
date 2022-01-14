@@ -1,9 +1,12 @@
 ## Practice Journal 
 
-Medium problems
+Easy 
+* https://leetcode.com/problemset/algorithms/?page=1&difficulty=EASY
+
+Medium 
 * https://leetcode.com/problemset/algorithms/?page=1&difficulty=MEDIUM
 
-Dynamic programming problems
+Dynamic programming 
 * https://leetcode.com/tag/dynamic-programming/
 
 ## Round 3
