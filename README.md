@@ -1,10 +1,10 @@
 ## Practice Journal 
 
-One easy or medium problem per week
+One easy or medium problem per week Due Wednesday
 * https://leetcode.com/problemset/algorithms/?difficulty=EASY&page=1
 * https://leetcode.com/problemset/algorithms/?page=1&difficulty=MEDIUM
 
-One dynamic programming per week
+One dynamic programming per week Due Sunday
 * https://leetcode.com/tag/dynamic-programming/
 
 
