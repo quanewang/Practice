@@ -1,3 +1,14 @@
+## Practice Journal 
+
+Easy 
+* https://leetcode.com/problemset/algorithms/?page=1&difficulty=EASY
+
+Medium 
+* https://leetcode.com/problemset/algorithms/?page=1&difficulty=MEDIUM
+
+Dynamic programming 
+* https://leetcode.com/tag/dynamic-programming/
+
 ## Round 3
 ### 150. Evaluate Reverse Polish Notation
 https://leetcode.com/problems/evaluate-reverse-polish-notation/
@@ -25,6 +36,27 @@ https://leetcode.com/problems/3sum-closest/
 
 ### 24. Swap Nodes in Pairs
 https://leetcode.com/problems/swap-nodes-in-pairs/
+
+### 34. Find First and Last Position of Element in Sorted Array
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+### 99. Recover Binary Search Tree
+https://leetcode.com/problems/recover-binary-search-tree/
+
+### 149. Max Points on a Line
+https://leetcode.com/problems/max-points-on-a-line/
+
+### 140. Word Break II
+https://leetcode.com/problems/word-break-ii/
+
+### 148. Sort List
+https://leetcode.com/problems/sort-list/
+
+### 173. Binary Search Tree Iterator
+https://leetcode.com/problems/binary-search-tree-iterator/
+
+
+
 
 ## Round 2
 https://leetcode.com/problemset/all/
