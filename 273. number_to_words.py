@@ -48,7 +48,7 @@ def number_to_words(num):
                 sub = sub + magnitude_dict.get(count % 4)
 
             result = sub + result
-            
+
             if result and result[len(result) - 1] == " ":
                 result = result[0:len(result) - 1]
         s = s[0:len(s) - 3]
