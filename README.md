@@ -56,7 +56,11 @@ https://leetcode.com/problems/sort-list/
 https://leetcode.com/problems/binary-search-tree-iterator/
 
 
+### 142. Linked List Cycle II
+https://leetcode.com/problems/linked-list-cycle-ii/
 
+### 295. Find Median from Data Stream
+https://leetcode.com/problems/find-median-from-data-stream/
 
 ## Round 2
 https://leetcode.com/problemset/all/
