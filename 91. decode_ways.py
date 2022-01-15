@@ -24,7 +24,7 @@ def get_ways(s, count_dict, i=0):
     if int(sub_str[0:2]) <= 26:
         if count_dict.get(i + 2) is None:
             new_count = get_ways(s, count_dict, i + 2)
-            count_dict.update({i + 1: new_count})
+            count_dict.update({i + 2: new_count})
             count += new_count
         else:
             count += count_dict.get(i + 2)
