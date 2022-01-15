@@ -4,6 +4,8 @@ def decode_ways(s):
 
 
 def get_ways(s, count_dict, i=0):
+    if i in count_dict:
+        return count_dict.get(i)
     sub_str = s[i:len(s)]
     if not sub_str:
         return 1
@@ -14,20 +16,12 @@ def get_ways(s, count_dict, i=0):
     if len(sub_str) == 1:  # 0 case covered by above
         return 1
 
-    count = 0
-    if count_dict.get(i + 1) is None:
-        new_count = get_ways(s, count_dict, i + 1)
-        count_dict.update({i + 1: new_count})
-        count = new_count
-    else:
-        count += count_dict.get(i + 1)
+    count = get_ways(s, count_dict, i + 1)
+
     if int(sub_str[0:2]) <= 26:
-        if count_dict.get(i + 2) is None:
-            new_count = get_ways(s, count_dict, i + 2)
-            count_dict.update({i + 2: new_count})
-            count += new_count
-        else:
-            count += count_dict.get(i + 2)
+        count += get_ways(s, count_dict, i + 2)
+
+    count_dict.update({i: count})
 
     return count
 
