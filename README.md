@@ -62,6 +62,9 @@ https://leetcode.com/problems/linked-list-cycle-ii/
 ### 295. Find Median from Data Stream
 https://leetcode.com/problems/find-median-from-data-stream/
 
+### 330. Patching Array
+https://leetcode.com/problems/patching-array/
+
 ## Round 2
 https://leetcode.com/problemset/all/
 
