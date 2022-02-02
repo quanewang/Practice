@@ -9,6 +9,34 @@ Medium
 Dynamic programming 
 * https://leetcode.com/tag/dynamic-programming/
 
+## Round 4
+### 136. Single Number
+https://leetcode.com/problems/single-number/
+
+### 99. Recover Binary Search Tree
+https://leetcode.com/problems/recover-binary-search-tree/
+
+### 149. Max Points on a Line
+https://leetcode.com/problems/max-points-on-a-line/
+
+### 140. Word Break II
+https://leetcode.com/problems/word-break-ii/
+
+### 148. Sort List
+https://leetcode.com/problems/sort-list/
+
+### 173. Binary Search Tree Iterator
+https://leetcode.com/problems/binary-search-tree-iterator/
+
+
+### 142. Linked List Cycle II
+https://leetcode.com/problems/linked-list-cycle-ii/
+
+### 295. Find Median from Data Stream
+https://leetcode.com/problems/find-median-from-data-stream/
+
+### 330. Patching Array
+https://leetcode.com/problems/patching-array/
 ## Round 3
 ### 150. Evaluate Reverse Polish Notation
 https://leetcode.com/problems/evaluate-reverse-polish-notation/
@@ -40,30 +68,6 @@ https://leetcode.com/problems/swap-nodes-in-pairs/
 ### 34. Find First and Last Position of Element in Sorted Array
 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
-### 99. Recover Binary Search Tree
-https://leetcode.com/problems/recover-binary-search-tree/
-
-### 149. Max Points on a Line
-https://leetcode.com/problems/max-points-on-a-line/
-
-### 140. Word Break II
-https://leetcode.com/problems/word-break-ii/
-
-### 148. Sort List
-https://leetcode.com/problems/sort-list/
-
-### 173. Binary Search Tree Iterator
-https://leetcode.com/problems/binary-search-tree-iterator/
-
-
-### 142. Linked List Cycle II
-https://leetcode.com/problems/linked-list-cycle-ii/
-
-### 295. Find Median from Data Stream
-https://leetcode.com/problems/find-median-from-data-stream/
-
-### 330. Patching Array
-https://leetcode.com/problems/patching-array/
 
 ## Round 2
 https://leetcode.com/problemset/all/
