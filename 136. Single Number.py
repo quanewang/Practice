@@ -2,28 +2,57 @@ def singleNumber(nums):
     bin_result = [0]
 
     for num in nums:
-        binary = get_binary(num)
+        if num >= 0:
+            binary = get_binary_positive(num)
+            binary.append(0)
+        else:
+            binary = get_binary_negative(num)
+            binary.append(1)
 
         bin_result = xor(bin_result, binary)
 
     result = 0
     power = 1
-    for i in range(len(bin_result)):
-        if bin_result[i]:
-            result += power
+    if bin_result[len(bin_result) - 1] == 0:
+        for i in range(len(bin_result)):  # convert back to decimal
+            if bin_result[i]:
+                result += power
 
-        power *= 2
+            power *= 2
+    else:
+        for i in range(len(bin_result)):  # convert back to decimal
+            if not bin_result[i]:
+                result += power
+
+            power *= 2
+        result += 1
+        result *= -1
 
     return result
 
 
-def get_binary(num):
-    bin_list = []
+def get_binary_positive(num):
+    bit_list = []
     while num != 0:
-        bin_list.append(num % 2)
+        bit_list.append(num % 2)
         num //= 2
+    return bit_list
 
-    return bin_list
+
+def get_binary_negative(num):
+    bit_list = get_binary_positive(num * -1)
+    for i in range(len(bit_list)):
+        if bit_list[i]:
+            bit_list[i] = 0
+        else:
+            bit_list[i] = 1
+
+    i = 0
+    while bit_list[i] == 1:
+        bit_list[i] = 0
+        i += 1
+    bit_list[i] = 1
+    return bit_list
 
 
 def xor(num1, num2):
@@ -46,7 +75,7 @@ def xor(num1, num2):
     return num2
 
 
-print(singleNumber([4, 1, 2, 1, 2]))
-print(singleNumber([1, 2, 1, 65, 2]))
-print(singleNumber([65]))
+print(singleNumber([-1, 1, 1]))
+print(singleNumber([65, 1, 1, -4, 65]))
+print(singleNumber([1, 4, 2, 1, 2]))
 
