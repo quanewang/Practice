@@ -62,6 +62,9 @@ def xor(num1, num2):
         num1 = num2
         num2 = temp
 
+    sign_bit = num1[len(num1) - 1]
+    for i in range(len(num2) - len(num1)):  # fill smaller bit with sign bits
+        num1.append(sign_bit)
     i = 0
     while i < len(num1):  # xor num1 elements with num2 (implicit merge)
         bit1 = num1[i]
