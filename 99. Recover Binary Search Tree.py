@@ -5,44 +5,46 @@ class TreeNode:
         self.right = right
 
 
+class Context:
+    def __init__(self, previous=None, first=None, second=None):
+        self.first = first
+        self.second = second
+        self.previous = previous
+
+
 def recoverTree(root):
-    validate(root, [])
+    context = Context()
+    validate(root, context)
+
+    first = context.first
+    second = context.second
+
+    if not first or not second:
+        return
+
+    temp = first.val
+    first.val = second.val
+    second.val = temp
 
 
-def validate(node, previous_nodes):
-    for i in range(len(previous_nodes)):
-        parent, subtree = previous_nodes[i]
-        if subtree == 0:
-            if parent.val < node.val:  # swap
-                temp = parent.val
-                parent.val = node.val
-                node.val = temp
+def validate(node, context): # in order traversal
+    if node is None:
+        return
 
-                return True
+    validate(node.left, context)
 
-        else:
-            if parent.val > node.val:  # swap
-                temp = parent.val
-                parent.val = node.val
-                node.val = temp
+    if not context.first and (context.previous and context.previous.val >= node.val):
+        context.first = context.previous
 
-                return True
-        
-    copy = previous_nodes.copy()
-    if node.left:
-        copy.append((node, 0))
-        if validate(node.left, copy):
-            return True
+    if context.first and (context.previous and node.val < context.previous.val):
+        context.second = node
 
-    copy = previous_nodes.copy()
-    if node.right:
-        copy.append((node, 1))
-        if validate(node.right, copy):
-            return True
+    context.previous = node
+    validate(node.right, context)
 
 
 
-    return False
+
 
 
 
