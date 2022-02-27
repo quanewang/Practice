@@ -27,7 +27,7 @@ def recoverTree(root):
     second.val = temp
 
 
-def validate(node, context): # in order traversal
+def validate(node, context):  # in order traversal
     if node is None:
         return
 
@@ -43,6 +43,51 @@ def validate(node, context): # in order traversal
     validate(node.right, context)
 
 
+def top_down_recover(root):
+    if root is None:
+        return False
+
+    l_max = find_node(root.left, max, root)
+
+    r_min = find_node(root.right, min, root)
+
+    if l_max.val > r_min.val:
+        temp = l_max.val
+        l_max.val = r_min.val
+        r_min.val = temp
+        return True
+
+    if root.val < l_max.val:
+        temp = root.val
+        root.val = l_max.val
+        l_max.val = temp
+        return True
+
+    if root.val > r_min.val:
+        temp = root.val
+        root.val = r_min.val
+        r_min.val = temp
+        return True
+
+    if top_down_recover(root.left):
+        return True
+    if top_down_recover(root.right):
+        return True
+
+    return False
+
+
+def find_node(root, function, node=None):
+    if root is None:
+        return node
+
+    if function(node.val, root.val) == root.val:
+        node = root
+
+    node = find_node(root.left, function, node)
+    node = find_node(root.right, function, node)
+
+    return node
 
 
 
