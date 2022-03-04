@@ -10,8 +10,9 @@ Dynamic programming
 * https://leetcode.com/tag/dynamic-programming/
 
 ## Round 4
+### 790. Domino and Tromino Tiling
+https://leetcode.com/problems/domino-and-tromino-tiling/
 
-### fitting blocks
 In how many ways can you fit 1 X 1 X 2 sized dominoes into a domino of dimensions 2 X 2 X N, where N is a variable?
 
 ### 136. Single Number
