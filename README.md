@@ -10,11 +10,6 @@ Dynamic programming
 * https://leetcode.com/tag/dynamic-programming/
 
 ## Round 4
-### 790. Domino and Tromino Tiling
-https://leetcode.com/problems/domino-and-tromino-tiling/
-
-In how many ways can you fit 1 X 1 X 2 sized dominoes into a domino of dimensions 2 X 2 X N, where N is a variable?
-
 ### 136. Single Number
 https://leetcode.com/problems/single-number/
 
@@ -76,6 +71,10 @@ https://leetcode.com/problems/swap-nodes-in-pairs/
 ### 34. Find First and Last Position of Element in Sorted Array
 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
+### 790. Domino and Tromino Tiling
+https://leetcode.com/problems/domino-and-tromino-tiling/
+
+In how many ways can you fit 1 X 1 X 2 sized dominoes into a domino of dimensions 2 X 2 X N, where N is a variable?
 
 ## Round 2
 https://leetcode.com/problemset/all/
