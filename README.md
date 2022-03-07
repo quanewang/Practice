@@ -16,6 +16,9 @@ https://leetcode.com/problems/single-number/
 ### 99. Recover Binary Search Tree
 https://leetcode.com/problems/recover-binary-search-tree/
 
+### 215. Kth Largest Element in an Array
+https://leetcode.com/problems/kth-largest-element-in-an-array/
+
 ### 149. Max Points on a Line
 https://leetcode.com/problems/max-points-on-a-line/
 
@@ -68,6 +71,10 @@ https://leetcode.com/problems/swap-nodes-in-pairs/
 ### 34. Find First and Last Position of Element in Sorted Array
 https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
+### 790. Domino and Tromino Tiling
+https://leetcode.com/problems/domino-and-tromino-tiling/
+
+In how many ways can you fit 1 X 1 X 2 sized dominoes into a domino of dimensions 2 X 2 X N, where N is a variable?
 
 ## Round 2
 https://leetcode.com/problemset/all/
